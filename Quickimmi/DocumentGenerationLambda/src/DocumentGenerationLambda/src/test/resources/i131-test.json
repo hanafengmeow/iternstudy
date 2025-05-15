@@ -1,0 +1,206 @@
+{   
+    "attorney": {
+        "g28AttachedCheckbox": "Y",
+        "attorneyStateLicenseNumber": "attorneyStateLicenseNumber"
+    },
+    "applicant": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "middleName": "M",
+        "physicalAddress": {
+            "inCareOfName": "Jane Smith",
+            "streetNumberAndName": "123 Main St",
+            "aptCheckbox": " APT ",
+            "steCheckbox": " STE ",
+            "flrCheckbox": " FLR ",
+            "aptSteFlrNumber": "Apt 1",
+            "city": "Springfield",
+            "state": "IL",
+            "zipCode": "62704",
+            "postalCode": "62704",
+            "province": "N/A",
+            "country": "USA"
+        },
+        "alienNumber": "A105123456",
+        "countryOfBirth": "USA",
+        "countryOfCitizenship": "USA",
+        "classOfAdmission": "B1",
+        "maleCheckbox": "Y",
+        "femaleCheckbox": "Y",
+        "dateOfBirth": "01/01/1980",
+        "ssn": "109123456"
+    },
+    "applicationType": {
+        "permanentResidentCheckbox": "Y",
+        "refugeeOrAsyleeCheckbox": "Y",
+        "directResultRefugeeOrAsyleeCheckbox": "Y",
+        "advanceParoleReentryCheckbox": "Y",
+        "advanceParoleOutsideUSCheckbox": "Y",
+        "advanceParoleForAnotherCheckbox": "Y",
+        "lastName": "Doe",
+        "firstName": "John",
+        "middleName": "Michael",
+        "dateOfBirth": "1985-01-01",
+        "countryOfBirth": "USA",
+        "countryOfCitizenship": "USA",
+        "daytimePhoneNumber": {
+            "number1to3": "111",
+            "number4to6": "222",
+            "number7to10": "3333"
+        },
+        "daytimePhoneNumber2": "222",
+        "daytimePhoneNumber3": "333",
+        "physicalAddress": {
+            "inCareOfName": "Jane Doe",
+            "streetNumberAndName": "123 Elm Street",
+            "aptCheckbox": " APT ",
+            "steCheckbox": " STE ",
+            "flrCheckbox": " FLR ",
+            "aptSteFlrNumber": "100",
+            "city": "Anytown",
+            "state": "NJ",
+            "zipCode": "90210",
+            "province": "NJ",
+            "postalCode": "90210",
+            "country": "USA"
+        }
+    },
+    "processingInfo": {
+        "intendedDepartureDate": "intendedDepartureDate",
+        "expectedLengthOfTrip": "expectedLengthOfTrip",
+        "inExclusionProceedingsYesCheckbox": "Y",
+        "inExclusionProceedingsNoCheckbox": "Y",
+        "dhsOfficeName": "dhsOfficeName",
+        "previousReentryPermitYesCheckbox": "Y",
+        "previousReentryPermitNoCheckbox": "Y",
+        "previousReentryPermitIssueDate": "previousReentryPermitIssueDate",
+        "previousReentryPermitDisposition": "previousReentryPermitDisposition",
+        "sendDocumentToUSAddressCheckbox": "Y",
+        "sendDocumentToEmbassyAddressCheckbox": "Y",
+        "usEmbassyCity": "usEmbassyCity",
+        "usEmbassyCountry": "usEmbassyCountry",
+        "sendDocumentToDHSOfficeCheckbox": "Y",
+        "dhsOfficeCity": "dhsOfficeCity",
+        "dhsOfficeCountry": "dhsOfficeCountry",
+        "sendDocumentToPart2AddressCheckbox": "Y",
+        "sendDocumentToPart3AddressCheckbox": "Y",
+        "address": {
+            "inCareOfName": "inCareofName",
+            "streetNumberAndName": "streetNumberAndName",
+            "aptCheckbox": " APT ",
+            "flrCheckbox": " FLR ",
+            "steCheckbox": " STE ",
+            "aptSteFlrNumber": "aptSteFlrNumber",
+            "city": "city",
+            "state": "CA",
+            "zipCode": "zipCode",
+            "postalCode": "postalCode",
+            "province": "province",
+            "country": "country"
+        },
+        "daytimePhoneNumber": {
+            "number1to3": "123",
+            "number4to6": "456",
+            "number7to10": "7890"
+        }
+    },
+    "travel": {
+        "travelPurpose": "travelPurpose",
+        "listTravelCountries": "listTravelCountries"
+    },
+    "applyReentryPermit": {
+        "timeOutsideUSLessThan6MonthsCheckbox": "Y",
+        "timeOutsideUS6MonthsTo1YearCheckbox": "Y",
+        "timeOutsideUS1To2YearsCheckbox": "Y",
+        "timeOutsideUS2To3YearsCheckbox": "Y",
+        "timeOutsideUS3To4YearsCheckbox": "Y",
+        "timeOutsideUSMoreThan4YearsCheckbox": "Y",
+        "filedTaxAsNonResidentNoCheckbox": "Y",
+        "filedTaxAsNonResidentYesCheckbox": "Y"
+    },
+    "applyRefugeeTravel": {
+        "refugeeAsyleeCountry": "refugeeAsyleeCountry",
+        "planToTravelToRefugeeCountryYesCheckbox": "Y",
+        "planToTravelToRefugeeCountryNoCheckbox": "Y",
+        "returnedToRefugeeCountryNoCheckbox": "Y",
+        "returnedToRefugeeCountryYesCheckbox": "Y",
+        "appliedForPassportFromRefugeeCountryNoCheckbox": "Y",
+        "appliedForPassportFromRefugeeCountryYesCheckbox": "Y",
+        "receivedBenefitsFromRefugeeCountryYesCheckbox": "Y",
+        "receivedBenefitsFromRefugeeCountryNoCheckbox": "Y",
+        "reacquiredNationalityNoCheckbox": "Y",
+        "reacquiredNationalityYesCheckbox": "Y",
+        "acquiredNewNationalityYesCheckbox": "Y",
+        "acquiredNewNationalityNoCheckbox": "Y",
+        "grantedRefugeeStatusOtherCountryNoCheckbox": "Y",
+        "grantedRefugeeStatusOtherCountryYesCheckbox": "Y"
+    },
+    "applyAdvanceParole": {
+        "moreThanOneTripCheckbox": "Y",
+        "oneTripCheckbox": "Y",
+        "destinationCity": "city",
+        "destinationCountry": "country",
+        "deliverToAddressPart2Checkbox": "Y",
+        "deliverToAddressPart7Checkbox": "Y",
+        "address": {
+            "inCareOfName": "inCareOfName",
+            "streetNumberAndName": "streetNumberAndName",
+            "steCheckbox": " STE ",
+            "flrCheckbox": " FLR ",
+            "aptCheckbox": " APT ",
+            "aptSteFlrNumber": "aptSteFlrNumber",
+            "city": "city",
+            "state": "NJ",
+            "zipCode": "zipCode",
+            "postalCode": "postalCode",
+            "province": "province",
+            "country": "country"
+        },
+        "daytimePhoneNumber": {
+            "number1to3": "123",
+            "number4to6": "456",
+            "number7to10": "7890"
+        }
+    },
+    "employmentAuthorization": {
+        "requestEADForOAWYesCheckbox": "Y",
+        "requestEADForOAWNoCheckbox": "Y"
+    },
+    "signature": {
+        "signatureOfApplicant": "signatureofApplicant",
+        "dateOfSignature": "dateOfSignature",
+        "daytimePhoneNumber": {
+            "number1to3": "123",
+            "number4to6": "456",
+            "number7to10": "7890"
+        }
+    },
+    "preparer": {
+        "lastName": "lastName",
+        "firstName": "firstName",
+        "businessOrOrganizationName": "businessOrOrganizationName",
+        "streetNumberAndName": "streetNumberAndName",
+        "mailingAddress": {
+            "streetNumberAndName": "streetNumberAndName",
+            "aptCheckbox": " APT ",
+            "flrCheckbox": " FLR ",
+            "steCheckbox": " STE ",
+            "aptSteFlrNumber": "aptSteFlrNumber",
+            "city": "city",
+            "state": "NY",
+            "zipCode": "zipCode",
+            "postalCode": "postalCode",
+            "province": "province",
+            "country": "country"
+        },
+        "daytimePhoneNumberExtension": "daytimePhoneNumberExtension",
+        "daytimePhoneNumber": {
+            "number1to3": "111",
+            "number4to6": "222",
+            "number7to10": "3333"
+        },
+        "emailAddress": "emailAddress",
+        "signatureOfPreparer": "signatureofPreparer",
+        "dateOfSignature": "dateOfSignature"
+    }
+}   

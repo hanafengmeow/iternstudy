@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: I94 web crawler
+Resources:
+  I94CrawlerTaskQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+      VisibilityTimeout: 900
+  I94CrawlerTaskLambda:
+    Type: AWS::Serverless::Function
+    Metadata:
+      DockerTag: I94Crawler-lastest
+      DockerContext: ./app
+      Dockerfile: Dockerfile
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: I94CrawlerTaskLambda
+      PackageType: Image
+      CodeUri: app
+      MemorySize: 3008
+      Timeout: 900
+      Tracing: Active
+      Architectures:
+        - x86_64
+      Events:
+        I94CrawlerTaskQueue:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt I94CrawlerTaskQueue.Arn
+            BatchSize: 1
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0cbc57a19ca025a7a
+        SubnetIds:
+          - subnet-04b8ac0f303ff21f2
+          - subnet-0a374967a36edc0ab
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+              Resource: arn:aws:logs:us-west-1:471112972897:*
+            - Effect: Allow
+              Action:
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource:
+                - arn:aws:logs:us-west-1:471112972897:log-group:/aws/lambda/I94CrawlerTaskLambda:*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::quickimmi-generated-document-bucket
+                - !Sub arn:${AWS::Partition}:s3:::quickimmi-generated-document-bucket/*

@@ -1,0 +1,11 @@
+# Default ignored files
+.idea/
+.gradle/
+app/gradle/
+.vscode
+bin
+gradle
+build
+gradlew.bat
+gradlew
+.DS_Store

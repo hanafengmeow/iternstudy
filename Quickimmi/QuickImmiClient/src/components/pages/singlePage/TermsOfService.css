@@ -1,0 +1,20 @@
+.terms > h1 {
+  margin-bottom: 10px;
+}
+
+.terms-collapse {
+  margin: 20px -20px;
+  overflow-y: auto;
+}
+
+.terms-outlined svg {
+  font-size: 20px;
+}
+
+.terms-outlined.active svg {
+  fill: var(--primary-color);
+}
+
+.terms-collapse > .ant-collapse-item > .ant-collapse-header {
+  color: var(--dark-gray-color);
+}

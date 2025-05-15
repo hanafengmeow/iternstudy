@@ -1,0 +1,204 @@
+{
+  "id": "i589_fields_basic_information",
+  "version": "2024-04-01",
+  "type": "fields",
+  "fields": [
+    {
+      "label": "text_UploadPassportOrOtherID",
+      "placeholder": "text_UploadPassportOrOtherID",
+      "id": "upload_id",
+      "key": "applicant.passportDocumentId",
+      "control": "component_passport_uploader"
+    },
+    {
+      "label": "text_UploadPassportStampPages",
+      "id": "applicant_passport_stamp_page_documents",
+      "key": "applicant.passportStampPageDocumentIds",
+      "control": "multi_file_uploader",
+      "documentType": "PASSPORT_STAMP_PAGES"
+    },
+    {
+      "label": "text_PassportNumber",
+      "placeholder": "text_PassportNumber",
+      "id": "passport_number",
+      "key": "applicant.passportNumber",
+      "control": "component_textbox_na"
+    },
+    {
+      "label": "text_TravelDocumentNumber",
+      "placeholder": "text_TravelDocumentNumber",
+      "id": "travel_document_number",
+      "key": "applicant.travelDocumentNumber",
+      "control": "component_textbox_na"
+    },
+    {
+      "label": "text_IDExpirationDate",
+      "placeholder": "text_MM/DD/YYYY",
+      "id": "expiration_date",
+      "key": "applicant.expirationDate",
+      "control": "datepicker"
+    },
+    {
+      "label": "text_PassportIssueCountryLabel",
+      "placeholder": "text_PassportIssueCountry",
+      "id": "passport_issue_country",
+      "key": "applicant.passportIssueCountry",
+      "control": "text"
+    },
+    {
+      "label": "text_Name",
+      "id": "name",
+      "control": "group",
+      "maxChildPerRow": "3",
+      "fields": [
+        {
+          "label": "text_FirstName",
+          "placeholder": "text_FirstName",
+          "id": "first_name",
+          "key": "applicant.firstName",
+          "control": "text"
+        },
+        {
+          "label": "text_MiddleName",
+          "placeholder": "text_MiddleName",
+          "id": "middle_name",
+          "key": "applicant.middleName",
+          "control": "component_textbox_na"
+        },
+        {
+          "label": "text_LastName",
+          "placeholder": "text_LastName",
+          "id": "last_name",
+          "key": "applicant.lastName",
+          "control": "text"
+        }
+      ]
+    },
+    {
+      "label": "text_NamesUsedBeforeLabel",
+      "placeholder": "text_NamesUsedBefore",
+      "id": "names_used_before",
+      "key": "applicant.namesUsedBefore",
+      "control": "component_multi_textboxes_na"
+    },
+    {
+      "label": "text_BirthDate",
+      "id": "birth_date",
+      "key": "applicant.birthDate",
+      "control": "datepicker"
+    },
+    {
+      "label": "text_CityAndCountryOfBirth",
+      "placeholder": "text_CityAndCountryOfBirth",
+      "id": "city_and_country_of_birth",
+      "key": "applicant.cityAndCountryOfBirth",
+      "control": "component_location_dropdown"
+    },
+    {
+      "label": "text_Nationality",
+      "id": "nationality",
+      "control": "group",
+      "maxChildPerRow": "3",
+      "fields": [
+        {
+          "label": "text_PresentNationality",
+          "placeholder": "text_PresentNationality",
+          "id": "nationality",
+          "key": "applicant.nationality",
+          "control": "select",
+          "options": "NationalityOptions"
+        },
+        {
+          "label": "text_NationalityAtBirth",
+          "placeholder": "text_NationalityAtBirth",
+          "id": "nationality_at_birth",
+          "key": "applicant.nationalityAtBirth",
+          "control": "select",
+          "options": "NationalityOptions"
+        }
+      ]
+    },
+    {
+      "label": "text_PersonalDemographics",
+      "id": "personal_demographics",
+      "control": "group",
+      "maxChildPerRow": "3",
+      "fields": [
+        {
+          "label": "text_Gender",
+          "placeholder": "text_Gender",
+          "id": "gender",
+          "key": "applicant.genderMaleCheckbox,applicant.genderFemaleCheckbox",
+          "control": "select",
+          "options": [
+            {
+              "value": "Male",
+              "label": "text_Male",
+              "keyValue": "true,false"
+            },
+            {
+              "value": "Female",
+              "label": "text_Female",
+              "keyValue": "false,true"
+            }
+          ]
+        },
+        {
+          "label": "text_Religion",
+          "placeholder": "text_Religion",
+          "id": "religion",
+          "key": "applicant.religion",
+          "control": "select",
+          "options": "ReligionOptions"
+        },
+        {
+          "label": "text_Race",
+          "placeholder": "text_Race",
+          "id": "race",
+          "key": "applicant.race",
+          "control": "component_textbox_na"
+        }
+      ]
+    },
+    {
+      "label": "text_Language",
+      "id": "language",
+      "control": "group",
+      "maxChildPerRow": "2",
+      "fields": [
+        {
+          "label": "text_NativeLanguage",
+          "placeholder": "text_NativeLanguage",
+          "id": "native_language",
+          "key": "applicant.nativeLanguage",
+          "control": "text"
+        },
+        {
+          "label": "text_FluentInEnglish",
+          "id": "fluent_in_english",
+          "key": "applicant.fluentEnglishYesCheckbox,applicant.fluentEnglishNoCheckbox",
+          "control": "checkbox",
+          "options": [
+            {
+              "value": "Yes",
+              "label": "text_Yes",
+              "keyValue": "true,false"
+            },
+            {
+              "value": "No",
+              "label": "text_No",
+              "keyValue": "false,true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "text_OtherFluentLanguagesLabel",
+      "placeholder": "text_OtherFluentLanguages",
+      "id": "other_fluent_languages",
+      "key": "applicant.otherFluentLanguages",
+      "control": "component_multi_textboxes_na"
+    }
+  ]
+}

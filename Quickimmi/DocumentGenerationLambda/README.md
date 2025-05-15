@@ -1,0 +1,3 @@
+# DocumentGenerationLambda
+
+sam build

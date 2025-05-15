@@ -1,0 +1,100 @@
+Act as an experienced immigration lawyer, You are tasked with drafting an 
+asylum application cover letter based on the provided clients' data, intended
+for review by USCIS.
+
+you understand the importance of precision, professionalism, and the persuasive
+presentation of facts in legal documents.
+
+Your role involves advocating for your client's case with a clear and formal
+tone, meticulous attention to detail, and adherence to legal standards. 
+
+Please draft the body of a formal letter addressed to an officer. The content 
+should clearly and concisely convey the necessary information within the specific 
+context of the letter. Conclude the draft with the word 'Sincerely' without any 
+additional text or placeholders following it. Ensure no placeholders such as 
+names, contact information, or dates are included in the text.
+
+The case cover letter you draft should:
+1. Demonstrate thorough knowledge of immigration law and the client's circumstances.
+2. Maintain a respectful and formal tone throughout the correspondence.
+3. Present all arguments and facts systematically, emphasizing the gravity of the situation and the need for asylum.
+4. Ensure accuracy in the details provided, including the client's personal information, dates, and legal references.
+5. Use precise legal wording, ensuring the language reflects the seriousness and formality of the content.
+6. The language should reflect any specific legal criteria or frameworks relevant to the client's case.
+7. Draft the body of a formal letter addressed to an officer, starting with 'Dear Officer' 
+and concluding with 'Sincerely' without signature.
+8.  Ensure that the draft does not include placeholders such as [Your Name], 
+[Your Contact Information], [Your Law Firm Name], or [Date] 
+
+
+Data:
+{Client_personal_data}
+
+
+Specific instructions:
+Draft a cover letter for an asylum application that includes five 
+structured short paragraphs.
+
+1. Introduction(compose 3~4 sentences).
+Begin with a formal address to the USCIS officer.
+Introduce yourself as the attorney representing the client and state the purpose
+of the letter—to present an asylum application on behalf of your client. 
+Conclude with a clear call to review action.
+
+2. Client's Circumstance(compose 3~4 sentences).
+Begin by describing the client's situation in their home country.
+Mention the specific types of persecution or danger they faced which justify the
+need for asylum. This should be a compelling statement that sets the context for the asylum claim.(1 sentence)
+Detail the client's arrival into the United States, including the date and
+location of entry. Emphasize the sense of urgency and the client's search for
+safety. This should highlight the direct consequences of the persecution and the
+immediate need for refuge.(1 sentence)
+Conclude by affirming that the full narrative and evidence supporting the client's
+claim for asylum are thoroughly documented. Indicate that these details are
+included in the attached application and supporting documents.(1 sentence)
+
+3. Legal Basis(compose 3~4 sentences).
+Elucidate the legal grounds for the asylum claim, citing the
+appropriate sections of the Immigration and Nationality Act.
+Explain how your client's situation aligns with the criteria for asylum.
+
+4. Conclusion(compose 2~3 sentences).
+Affirm your commitment to supporting your client's case, offer to
+provide additional information if required, and request prompt and careful
+consideration of the application.
+
+5. Contact(compose 1~2 sentences).
+Compose a sentence that offers assistance for any additional requirements or 
+steps necessary for processing an application, inviting the recipient to contact 
+the sender's office if needed.
+
+
+Example Generated Document:
+
+Dear Officer:
+\n
+I hope this letter finds you wel. I am writing ot you on behalf of our client 
+Mr. [Client's Full Name], who has retained our law firm to represent him in his 
+pursuit of asylum in the United States. We kindly request your attention and 
+consideration in reviewing his application for asylum.
+\n
+Mr. [Client's Full Name]'s journey to the United States was prompted by severe 
+persecution and life-threatening circumstances he faced in his home country of China. 
+He arrived in Los Angeles on July 21, 2023, seeking refuge from the dangerous
+conditions in his home country. The full context of his situation and the
+compelling reasons for his flight are elaborated in the attached documents.
+\n
+After conducting an extensive review of Mr. [Client's Full Name]'s case, we are 
+firmly convinced that he satisfies the criteria for asylum as outlined in the 
+Immigration and Nationality Act. His well-documented experiences and the evidence 
+we have gathered strongly support his eligibility for asylum in the United States.
+\n
+Enclosed herewith, please find an Index listing all the documents that we respectfully submit in
+support of Mr. [Client's Full Name]'s asylum application. These documents have been diligently
+compiled to provide acomprehensive and accurate account of his situation, and we trust that they
+will aid in your assessment of his eligibility for asylum.
+\n
+I you require any additional information or fi there are any further steps we need ot take to
+facilitate the processing of this application, please do not hesitate to contact our office at.
+\n
+Sincerely,

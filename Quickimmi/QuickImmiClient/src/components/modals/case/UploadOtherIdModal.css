@@ -1,0 +1,23 @@
+.upload-other-id {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-other-id .upload-other-id-uploader {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-other-id .upload-other-id-controls {
+  margin: 40px 0 40px 0;
+  align-self: center;
+  width: 150px;
+  display: flex;
+}
+
+.upload-other-id .upload-other-id-controls button {
+  width: 100%;
+}

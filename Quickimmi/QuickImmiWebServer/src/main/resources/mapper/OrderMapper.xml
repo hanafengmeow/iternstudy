@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quick.immi.ai.dao.OrderMapper">
+    <insert id="create" parameterType="com.quick.immi.ai.entity.Order">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into order_table (`user_id`,`case_id`, `product_name`,`total_money`, `stripe_order_id`,`currency`, `payment_method_type`,
+        `status`, `created_at`)
+        values(#{userId},#{caseId}, #{productName}, #{totalMoney},#{stripeOrderId},#{currency}, #{paymentMethodType}, #{status}, #{createdAt});
+    </insert>
+
+    <select id="get" resultType="com.quick.immi.ai.entity.Order">
+        select * from order_table where case_id=#{caseId} and product_name=#{product};
+    </select>
+
+    <select id="getByOrderId" resultType="com.quick.immi.ai.entity.Order">
+        select * from order_table where id=#{id};
+    </select>
+
+    <update id="update" parameterType="com.quick.immi.ai.entity.Order">
+        update order_table
+        <set>
+            <if test="totalMoney != null">
+                total_money = #{totalMoney},
+            </if>
+            <if test="stripeOrderId != null">
+                stripe_order_id = #{stripeOrderId},
+            </if>
+            <if test="paymentMethodType != null">
+                payment_method_type = #{paymentMethodType},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+</mapper>

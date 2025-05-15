@@ -1,0 +1,16 @@
+.textbox-na {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.textbox-na-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.textbox-na-btn {
+  color: var(--gray-color-2);
+}

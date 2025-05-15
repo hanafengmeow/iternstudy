@@ -1,0 +1,6 @@
+-r requirements.txt
+black==24.4.2
+pytest==8.2.0
+pipdeptree==2.19.1
+jupyter==1.0.0
+ipykernel==6.29.5

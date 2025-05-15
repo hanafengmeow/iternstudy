@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quick.immi.ai.dao.TaskMapper">
+    <insert id="create" parameterType="com.quick.immi.ai.entity.Task">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into form_generation_task_table (`user_id`,`case_id`,`status`, `description`,`due_at`, `completed_at`,`created_at`)
+        values(#{userId},#{caseId},#{status}, #{description}, #{dueAt},#{completedAt},#{createdAt});
+    </insert>
+
+    <select id="get" resultType="com.quick.immi.ai.entity.Task">
+        select * from form_generation_task_table where id=#{id};
+    </select>
+
+    <select id="listByCaseId" resultType="com.quick.immi.ai.entity.Task">
+        select * from form_generation_task_table where case_id=#{caseId};
+    </select>
+
+    <select id="listByStatus" resultType="com.quick.immi.ai.entity.Task">
+        select * from form_generation_task_table where case_id=#{caseId} and status=#{status};
+    </select>
+
+    <select id="listByUserId" resultType="com.quick.immi.ai.entity.Task">
+        select * from form_generation_task_table where user_id=#{user_id};
+    </select>
+
+    <select id="listByCreator" resultType="com.quick.immi.ai.entity.Task">
+        select * from form_generation_task_table where case_id=#{caseId} and created_by=#{createdBy};
+    </select>
+
+    <update id="update" parameterType="com.quick.immi.ai.entity.Task">
+        update form_generation_task_table
+        <set>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="caseId != null">
+                case_id = #{caseId},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="dueAt != null">
+                due_at = #{dueAt},
+            </if>
+            <if test="completedAt != null">
+                completed_at = #{completedAt},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+</mapper>

@@ -1,0 +1,240 @@
+{
+    "content": {
+        "header": [],
+        "footer": [],
+        "body": {
+            "pleading1": [
+                "On behalf of my client, I make the following representations:",
+                "1.     The respondent concedes proper service of the Notice to Appear, dated {client[noticeOfAppearDate]}"
+            ],
+            "pleading2": [
+                "2.     I have explained to the respondent (through an interpreter, if necessary):"
+            ],
+            "pleading2Content": [
+                "a. The rights set forth in 8 C.F.R. §1240.10(a);\nb. The consequences of failing to appear in court as set forth in INA §240(b)(5);\nc. The limitation on discretionary relief failure to appear set forth in INA §240(b)(7);\nd. The consequences of knowingly filing or making a frivolous application as set forth in INA §208(d)(6);\ne. the requirement to notify the court within five days of any change of address or telephone number, using Form EOIR-33/IC pursuant to 8 C.F.R.§1003.15(d)."
+            ],
+            "pleading3": [
+                "3.     The respondent concedes the following allegation(s) in his respective NTA."
+            ],
+            "pleading3Content": [
+                "a. Respondent is not a citizen or national of the United States;\nb. Respondent is a native of {client[presentNationality]};\nc. Respondent arrived in the United States at or near {client[mostRecentEntryCity]}, {client[mostRecentEntryState]}, on or about {client[mostRecentEntryDate]};\nd. Respondent were not then admitted or paroled after inspection by an Immigration Officer."
+            ],
+            "pleading4": [
+                "4.     The respondent concedes the following charge(s) of removability in his respective NTA."
+            ],
+            "pleading4Content": [
+                "Respondent is alien present in the United States without being admitted or paroled, or who arrived in the United States at any time or place other than as designated by the Attorney General."
+            ],
+            "pleading5": [
+                "5.     In the event of removal, the respondent:"
+            ],
+            "pleading5Checkbox": [
+                "checkbox.5"
+            ],
+            "pleading6": [
+                "6.     The respondent will be applying for the following forms of relief from removal:"
+            ],
+            "pleading6Checkbox": [
+                "checkbox.6"
+            ],
+            "pleading7": [
+                "7.     If the relief from removal requires an application, the respondent will file the application in accordance with the deadline directed by the Immigration Judge, or, if the Immigration Judge has not directed a deadline, in accordance with the deadlines contained in the EOIR Policy Manual. The respondent acknowledges that, if the application(s) are not timely filed, the application(s) will be deemed waived and abandoned under 8 C.F.R.§1003.31(c)."
+            ],
+            "pleading8": [
+                "8.     If background and security investigations are required, the respondent has received the DHS biometrics instructions and will timely comply with the instructions. I have explained the instructions to the respondent (through an interpreter, if necessary), that, under 8 C.F.R.§1003.47(d), failure to provide biometrics or other biographical information within the time allowed will constitute abandonment of the application unless the respondent demonstrates that such failure was the result of good cause."
+            ],
+            "pleading9": [
+                "9.     The respondent estimates that 1 hours will be required for the respondent to present the case."
+            ],
+            "pleading9Checkbox": [
+                "checkbox.9"
+            ],
+            "letterDate": [
+                "Date: {letter_date}"
+            ],
+            "signature": [
+                "Respectfully Submitted.\n\n",
+                "_______________________",
+                "   {attorney[firstNameUpper]} {attorney[lastNameUpper]}, Esq."
+            ],
+            "declaration": [
+                "I, __________________, have been advised of my rights in these proceedings by my attorney or representative. I understand those rights. I waive a further explanation of those rights by this court.",
+                "I have been advised by my attorney or representative of the consequences of failing to appear for a hearing. I have also been advised by my attorney of the consequences of failing to appear for a scheduled date of departure or deportation. I understand those consequences.",
+                "I have been advised by my attorney or representative of the consequences of knowingly filing a frivolous asylum application. I understand those consequences.",
+                "I have been advised by my attorney or representative of the consequences of failing to follow the DHS biometrics instructions within the time allowed. I understand those consequences.",
+                "I understand that if my mailing address changes I must notify the court within 5 days of such change by completing an Alien’s Change of Address Form (Form EOIR-33/IC) and filing it with this court.",
+                "Finally, my attorney or representative has explained to me what this Written Pleading says. I understand it, I agree with it, and I request that the court accept it as my pleading."
+            ],
+            "declarationDate": [
+                "________________________",
+                "             {client[firstName]} {client[lastName]}"
+            ],
+            "declarationSignature": [
+                "________________________",
+                "              Respondent"
+            ]
+        }
+    },
+    "checkbox": {
+        "5": [
+            {
+                "label": "Names as the country to which removal should be directed;",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "OR",
+                "checked": false,
+                "boxStrokeColor": "white",
+                "boxFillColor": "white",
+                "x": 95
+            },
+            {
+                "label": "Declines to designate a country of removal.",
+                "checked": true,
+                "boxStrokeColor": "black",
+                "boxFillColor": "white",
+                "x": 95
+            }
+        ],
+        "6": [
+            {
+                "label": "Termination of Proceedings",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "Asylum",
+                "checked": true,
+                "boxStrokeColor": "black",
+                "boxFillColor": "white",
+                "x": 95
+            },
+            {
+                "label": "Withholding of removal (Restriction on Removal)",
+                "checked": true,
+                "boxStrokeColor": "black",
+                "boxFillColor": "white",
+                "x": 95
+            },
+            {
+                "label": "Adjustment of Status",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "Cancellation of Removal pursuant to INA§ ___________.",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "Waiver of Inadmissibility pursuant to INA§ ___________.",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "Voluntary Departure",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "Other (specify): ___________.",
+                "checked": false,
+                "x": 95
+            },
+            {
+                "label": "None",
+                "checked": false,
+                "x": 95
+            }
+        ],
+        "9": [
+            {
+                "label": "It is requested that the Immigration Court order an interpreter proficient in the {client[nativeLanguage]} language;",
+                "checked": true,
+                "boxStrokeColor": "black",
+                "boxFillColor": "white",
+                "x": 95,
+                "underline_phrases": [["{client[nativeLanguage]}", 1]]
+            },
+            {
+                "label": "OR",
+                "checked": false,
+                "boxStrokeColor": "white",
+                "boxFillColor": "white",
+                "x": 95
+            },
+            {
+                "label": "The respondent speaks English and does not require the services of an interpreter.",
+                "checked": false,
+                "x": 95
+            }
+        ]
+    },
+    "format": {
+        "body": {
+            "default": {
+                "font_name": "Times-Roman",
+                "font_size": 10.37,
+                "alignment": "left",
+                "line_height_factor": 1.2,
+                "margin_x": 72,
+                "margin_y": 82,
+                "page_size": "letter",
+                "font_color": "black",
+                "section_break": 0,
+                "x_wrap_position": 95
+            },
+            "pleading2Content": {
+                "x_position": 95
+            },
+            "pleading3": {
+                "underline_phrases": [["in his respective NTA", 1]]
+            },
+            "pleading3Content": {
+                "x_position": 95
+            },
+            "pleading4": {
+                "underline_phrases": [["in his respective NTA", 1]]
+            },
+            "pleading4Content": {
+                "x_position": 95
+            },
+            "pleading5Checkbox": {
+                "x_position": 95
+            },
+            "pleading6Checkbox": {
+                "x_position": 95
+            },
+            "pleading9": {
+                "underline_phrases": [["1", 1]]
+            },
+            "pleading9Checkbox": {
+                "x_position": 95
+            },
+            "letterDate": {
+                "font_name": "Times-Bold",
+                "y_position": 450
+            },
+            "signature": {
+                "font_name": "Times-Bold",
+                "y_position": 450,
+                "x_position": 365,
+                "line_height_factor": 0.8
+            },
+            "declaration": {
+                "start_new_page": true,
+                "x_wrap_position": 72
+            },
+            "declarationDate": {
+                "y_position": 250,
+                "line_height_factor": 0.8
+            },
+            "declarationSignature": {
+                "y_position": 250,
+                "x_position": 365,
+                "line_height_factor": 0.8
+            }
+        }
+    }
+}

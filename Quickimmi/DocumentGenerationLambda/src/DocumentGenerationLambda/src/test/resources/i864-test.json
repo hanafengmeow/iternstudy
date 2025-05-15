@@ -1,0 +1,416 @@
+{
+  "attorney": {
+    "stateBarNumber": "987654321",
+    "uSCISOnlineAccountNumber": "1234567890",
+    "g28AttachedCheckbox": "1"
+  },
+
+  "principalImmigrant": {
+    "alienNumber": "A123456789",
+    "uSCISOnlineAccountNumber": "1234567890",
+    "attorneyStateBarNumber": "987654321",
+    "lastName": "Doe",
+    "firstName": "John",
+    "middleName": "A",
+    "inCareOfName": "Care of John",
+    "mailAddress": {
+      "aptSteFlrNumber": "10",
+      "city": "New York",
+      "country": "USA",
+      "postalCode": "10001",
+      "province": "New York",
+      "state": "NY",
+      "streetNumberAndName": "1234 Main St",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "zipCode": "10001"
+    },
+    "countryOfCitizenship": "USA",
+    "dateOfBirth": "1980-01-01",
+    "daytimeTelephoneNumber": "1234567890"
+  },
+  "sponsorInfo": {
+    "fullName": "Jane Doe",
+    "isPetitionerCheckbox": "Y",
+    "filedAlienWorkerPetitionCheckbox": "Y",
+    "relationshipToImmigrant": "Spouse",
+    "ownershipInterest5PercentCheckbox": "Y",
+    "ownershipInterestDescription": "N/A",
+    "ownershipRelationshipToImmigrant": "N/A",
+    "onlyJointSponsorCheckbox": "Y",
+    "firstJointSponsorCheckbox": "1",
+    "secondJointSponsorCheckbox": "2",
+    "notOnlyJointSponsorCheckbox": "Y",
+    "substituteSponsorCheckbox": "Y",
+    "substituteSponsorRelationship": "N/A"
+  },
+  "sponsoredImmigrants": {
+    "sponsoringPrincipalImmigrantYesCheckbox": "Y",
+    "sponsoringPrincipalImmigrantNoCheckbox": "N",
+    "sponsoringFamilyMembersAfterSixMonthsCheckbox": "Y",
+    "sponsoringFamilyMembersAtSameTimeCheckbox": "Y",
+    "familyMembers": [
+      {
+        "alienNumber": "A987654321",
+        "uSCISOnlineAccountNumber": "1234567890",
+        "dateOfBirth": "2000-01-01",
+        "lastName": "Doe",
+        "firstName": "Jane",
+        "middleName": "B",
+        "relationshipToPrincipalImmigrant": "Daughter"
+      },
+      {
+        "alienNumber": "A987654322",
+        "uSCISOnlineAccountNumber": "1234567891",
+        "dateOfBirth": "2005-01-01",
+        "lastName": "Doe",
+        "firstName": "Jake",
+        "middleName": "C",
+        "relationshipToPrincipalImmigrant": "Son"
+      },
+      {
+        "alienNumber": "A987654323",
+        "uSCISOnlineAccountNumber": "1234567892",
+        "dateOfBirth": "2010-01-01",
+        "lastName": "Doe",
+        "firstName": "Jill",
+        "middleName": "D",
+        "relationshipToPrincipalImmigrant": "Daughter"
+      },
+      {
+        "alienNumber": "A987654323",
+        "uSCISOnlineAccountNumber": "1234567892",
+        "dateOfBirth": "2010-01-01",
+        "lastName": "Doe",
+        "firstName": "Jill4",
+        "middleName": "D",
+        "relationshipToPrincipalImmigrant": "Daughter"
+      },
+      {
+        "alienNumber": "A987654323",
+        "uSCISOnlineAccountNumber": "1234567892",
+        "dateOfBirth": "2010-01-01",
+        "lastName": "Doe",
+        "firstName": "Jill5",
+        "middleName": "D",
+        "relationshipToPrincipalImmigrant": "Daughter"
+      }
+    ],
+    "totalNumberOfImmigrantsSponsored": "3"
+  },
+  "sponsorDetails": {
+    "uSCISOnlineAccountNumber": "1234567890",
+    "sponsorANumber": "A123456789",
+    "totalNumberOfImmigrantsSponsored": "3",
+    "ssn": "987-65-4321",
+    "isUsCitizenCheckbox": "Y",
+    "isUsNationalCheckbox": "Y",
+    "isLawfulPermanentResidentCheckbox": "Y",
+    "militaryServiceActiveDutyYesCheckbox": "N",
+    "militaryServiceActiveDutyNoCheckbox": "Y",
+    "lastName": "Doe",
+    "firstName": "Jane",
+    "middleName": "A",
+    "inCareOfName": "care of name",
+    "mailAddress": {
+      "streetNumberAndName": "sponsorDetails street number",
+      "aptSteFlrNumber": "10",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "province": "New York",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "mailingAddressSameAsPhysicalYesCheckbox": "N",
+    "mailingAddressSameAsPhysicalNoCheckbox": "Y",
+    "physicalAddress": {
+      "streetNumberAndName": "Physical street number",
+      "aptSteFlrNumber": "10",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "city": "New York physical",
+      "state": "NY",
+      "zipCode": "10001",
+      "province": "New York physical",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "countryOfDomicile": "USA",
+    "dateOfBirth": "1975-01-01",
+    "cityOfBirth": "Los Angeles",
+    "stateOrProvinceOfBirth": "CA",
+    "countryOfBirth": "USA"
+  },
+  "householdSize": {
+    "part3Item29": "3",
+    "householdSize": "4",
+    "yourself": "1",
+    "spouse": "1",
+    "dependentChildren": "2",
+    "otherDependents": "0",
+    "sponsoredOtherPersons": "0",
+    "optionalSiblingsParentsAdultChildren": "0"
+  },
+  "sponsorContract": {
+    "canReadUnderstandEnglishCheckbox": "B",
+    "interpreterHelpedCheckbox": "A",
+    "fluentLanguage": "English",
+    "preparerCheckbox": "Y",
+    "preparerInformationProvided": "Prepared by attorney",
+    "contactInformation": {
+      "daytimeTelephoneNumber": "sponsor 3051234567",
+      "mobileTelephoneNumber": "sponsor 3057654321",
+      "emailAddress": "sponsor.garcia@example.com"
+    },
+    "dateOfSignature": "2023-01-01",
+    "sponsorSignature": "Jane Doe"
+
+  },
+  "employmentAndIncome": {
+    "employedAsCheckbox": " Y",
+    "employedOccupation": "Software Engineer",
+    "employer1Name": "employer1Name",
+    "employer2Name": "employer2Name",
+    "selfEmployedCheckbox": " Y",
+    "selfEmployedOccupation": "selfEmployedOccupation",
+    "retiredCheckbox": "Y ",
+    "retiredSince": " retiredSince 2000 ",
+    "unemployedCheckbox": " Y",
+    "unemployedSince": "unemployedSince 2000 ",
+    "individualAnnualIncome": "120000",
+    "incomeFromOtherHouseholdMember": [
+      {
+        "name": "person1 name",
+        "relationship": "person1 relationship",
+        "currentIncome": "person1 10000"
+      },
+      {
+        "name": "person2 name",
+        "relationship": "person2 relationship",
+        "currentIncome": "person2 20000"
+      },
+      {
+        "name": "person3 name",
+        "relationship": "person3 relationship",
+        "currentIncome": "person3 30000"
+      },
+      {
+        "name": "person4 name",
+        "relationship": "person4 relationship",
+        "currentIncome": "person4 40000"
+      }
+    ],
+    "totalAnnualHouseholdIncome": "210000",
+    "peopleCompletedFormI864ACheckbox": "Y",
+    "intendingImmigrantName": "John Doe",
+    "intendingImmigrantCheckbox": "Y",
+    "filedFederalTaxReturnNoCheckbox": "N",
+    "filedFederalTaxReturnYesCheckbox": "Y",
+    "mostRecentTaxYear": "2022",
+    "mostRecentTaxYearIncome": "120000",
+    "secondMostRecentTaxYear": "2021",
+    "secondMostRecentTaxYearIncome": "115000",
+    "thirdMostRecentTaxYear": "2020",
+    "thirdMostRecentTaxYearIncome": "110000",
+    "attachedTaxReturnsCheckbox": "Y",
+    "notNeedToCompleteForm": "Y",
+    "taxReturnAttached": "Y",
+    "checkboxYes": "N",
+    "checkboxNo": "Y",
+    "notRequiredToFileTaxReturnCheckbox": "Y",
+    "formCompleted": "Y"
+  },
+  "assetsSupplementIncome": {
+    "balanceSavingsCheckingAccounts": "50000",
+    "netRealEstateHoldings": "150000",
+    "netStocksBondsAssets": "50000",
+    "totalAssets": "250000",
+    "nameOfRelative": "Mary Doe",
+    "householdMemberAssets": "75000",
+    "principalImmigrantSavingsCheckingBalance": "20000",
+    "principalImmigrantRealEstateHoldings": "80000",
+    "principalImmigrantStocksBondsAssets": "30000",
+    "totalPrincipalImmigrantAssets": "130000",
+    "totalValueOfAssets": "455000"
+  },
+  "preparerInfo": {
+    "lastName": "Smith",
+    "firstName": "Tom",
+    "businessOrOrganizationName": "Legal Services Inc.",
+    "mailAddress": {
+      "streetNumberAndName": "5678 Elm St",
+      "aptSteFlrNumber": "5",
+      "aptCheckbox": " STE ",
+      "steCheckbox": " FLR ",
+      "flrCheckbox": " APT ",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90001",
+      "province": "California",
+      "postalCode": "90001",
+      "country": "USA"
+    },
+    "contactInformation": {
+      "daytimeTelephoneNumber": "1234567890",
+      "mobileTelephoneNumber": "0987654321",
+      "emailAddress": "tom.smith@example.com"
+    },
+    "notAttorneyCheckbox": "A",
+    "isAttorneyCheckbox": "B",
+    "extendsBeyondCheckbox": "Y",
+    "doesNotExtendBeyondCheckbox": "N",
+    "preparerSignature": "Tom Smith",
+    "dateOfSignature": "2023-01-01"
+  },
+
+  "interpreterInfo": {
+    "businessOrOrganizationName": "Interpretation Services",
+    "fluentLanguage": "Spanish",
+    "lastName": "Garcia",
+    "firstName": "Maria",
+    "mailAddress": {
+      "streetNumberAndName": "4321 Oak St",
+      "aptSteFlrNumber": "3",
+      "aptCheckbox": " STE ",
+      "steCheckbox": " FLR ",
+      "flrCheckbox": " APT ",
+      "city": "Miami",
+      "state": "FL",
+      "zipCode": "33101",
+      "province": "Florida",
+      "postalCode": "33101",
+      "country": "USA"
+    },
+  "contactInformation": {
+    "daytimeTelephoneNumber": "interpreter 3051234567",
+    "mobileTelephoneNumber": "interpreter 3057654321",
+    "emailAddress": "interpreter.garcia@example.com"
+  },
+  "interpreterSignature": "Maria Garcia",
+  "dateOfSignature": "2023-01-01"
+  },
+
+  "supplement": [
+    {
+      "lastName": "Doe1",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+       {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    },
+    {
+      "lastName": "Doe2",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+        {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    },
+    {
+      "lastName": "Doe3",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+        {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    }
+  ]
+
+}

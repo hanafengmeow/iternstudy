@@ -1,0 +1,399 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application Model template describing your function.
+Resources:
+  DocumentGenerationLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/DocumentGenerationLambda
+      Description: ''
+      MemorySize: 512
+      Timeout: 30
+      Handler: Handler::handleRequest
+      Runtime: java8.al2
+      Architectures:
+        - arm64
+      EphemeralStorage:
+        Size: 512
+      EventInvokeConfig:
+        MaximumEventAgeInSeconds: 21600
+        MaximumRetryAttempts: 2
+      PackageType: Zip
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*
+            - Effect: Allow
+              Action:
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DocumentGenerationLambda:*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${DocumentTemplate}
+                - !Sub arn:${AWS::Partition}:s3:::${DocumentTemplate}/*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${GeneratedDocument}
+                - !Sub arn:${AWS::Partition}:s3:::${GeneratedDocument}/*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:DescribeSecret
+                - secretsmanager:GetSecretValue
+              Resource:
+                - '*'
+        - Statement:
+            - Effect: Allow
+              Action:
+                - rds:*
+              Resource:
+                - '*'
+      SnapStart:
+        ApplyOn: None
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+      Events:
+        DocumentGenerationTaskQueue:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DocumentGenerationTaskQueue.Arn
+            BatchSize: 1
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-02c43fbfedf09b50b
+        SubnetIds:
+          - subnet-0e867647a1fa3666e
+          - subnet-02168764228abb516
+      Environment:
+        Variables:
+          DOCUMENTTEMPLATE_BUCKET_NAME: !Ref DocumentTemplate
+          DOCUMENTTEMPLATE_BUCKET_ARN: !GetAtt DocumentTemplate.Arn
+          GENERATEDDOCUMENT_BUCKET_NAME: !Ref GeneratedDocument
+          GENERATEDDOCUMENT_BUCKET_ARN: !GetAtt GeneratedDocument.Arn
+  DocumentGenerationTaskQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DocumentGenerationTaskDLQ.Arn
+        maxReceiveCount: 2
+  DocumentTemplate:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: quickimmi-document-template-bucket-prod
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  DocumentTemplateBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref DocumentTemplate
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt DocumentTemplate.Arn
+              - !Sub ${DocumentTemplate.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  GeneratedDocument:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: quickimmi-generated-document-bucket-prod
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  GeneratedDocumentBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref GeneratedDocument
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt GeneratedDocument.Arn
+              - !Sub ${GeneratedDocument.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  DocumentGenerationPythonLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: DocumentGenerationPythonLambda
+      CodeUri: src/DocumentGenerationPythonLambda
+      Handler: handler.handler
+      Runtime: python3.9
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Architectures:
+        - arm64
+      Events:
+        DocumentGenerationTaskQueuePython:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DocumentGenerationTaskQueuePython.Arn
+            BatchSize: 1
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-02c43fbfedf09b50b
+        SubnetIds:
+          - subnet-0e867647a1fa3666e
+          - subnet-02168764228abb516
+      Environment:
+        Variables:
+          GENERATEDDOCUMENT_BUCKET_NAME: !Ref GeneratedDocument
+          GENERATEDDOCUMENT_BUCKET_ARN: !GetAtt GeneratedDocument.Arn
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*
+            - Effect: Allow
+              Action:
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DocumentGenerationPythonLambda:*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${GeneratedDocument}
+                - !Sub arn:${AWS::Partition}:s3:::${GeneratedDocument}/*
+  DocumentGenerationTaskQueuePython:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DocumentGenerationTaskPythonDLQ.Arn
+        maxReceiveCount: 2
+  DocumentGenerationTaskDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+  DocumentGenerationTaskPythonDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+  DocumentFailedGenerationLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: DocumentFailedGenerationLambda
+      CodeUri: src/DocumentFailedGenerationLambda
+      Handler: Handler::handleRequest
+      Runtime: java8.al2
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Events:
+        DocumentGenerationTaskDLQ:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DocumentGenerationTaskDLQ.Arn
+            BatchSize: 1
+        DocumentGenerationTaskPythonDLQ:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DocumentGenerationTaskPythonDLQ.Arn
+            BatchSize: 1
+      Architectures:
+        - arm64
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*
+            - Effect: Allow
+              Action:
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DocumentFailedGenerationLambda:*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:DescribeSecret
+                - secretsmanager:GetSecretValue
+              Resource:
+                - '*'
+        - Statement:
+            - Effect: Allow
+              Action:
+                - rds:*
+              Resource:
+                - '*'
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-02c43fbfedf09b50b
+        SubnetIds:
+          - subnet-0e867647a1fa3666e
+          - subnet-02168764228abb516
+  DocumentFailedGenerationLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Retain
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${DocumentFailedGenerationLambda}
+  DocumentWebCrawlerPythonLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: DocumentWebCrawlerPythonLambda
+      CodeUri: src/DocumentWebCrawlerPythonLambda
+      Handler: handler.handler
+      Runtime: python3.9
+      MemorySize: 3008
+      Timeout: 125
+      Tracing: Active
+      Architectures:
+        - arm64
+      Events:
+        DocumentWebCrawlerPythonLambda:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt DocumentWebCrawlerPythonLambdaQueue.Arn
+            BatchSize: 1
+      Environment:
+        Variables:
+          DB_SECRET_ARN: !Sub arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:YourSecretName
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*
+            - Effect: Allow
+              Action:
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource:
+                - !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/DocumentWebCrawlerPythonLambda:*
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:DescribeSecret
+                - secretsmanager:GetSecretValue
+              Resource:
+                - '*'
+        - Statement:
+            - Effect: Allow
+              Action:
+                - rds:*
+              Resource:
+                - '*'
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-02c43fbfedf09b50b
+        SubnetIds:
+          - subnet-0e867647a1fa3666e
+          - subnet-02168764228abb516
+  DocumentWebCrawlerPythonLambdaQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 130
+      MessageRetentionPeriod: 345600
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DocumentWebCrawlerPythonLambdaQueueDLQ.Arn
+        maxReceiveCount: 2
+  DocumentWebCrawlerPythonLambdaQueueDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600

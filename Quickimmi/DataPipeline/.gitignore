@@ -1,0 +1,20 @@
+# Ignore AWS SAM build artifacts
+/WebCrawlerPipeline/.aws-sam/
+/WebCrawlerPipeline/.idea/
+/WebCrawlerPipeline/src/WebCrawlerInitLambda/.gradle/
+/WebCrawlerPipeline/src/WebCrawlerInitLambda/gradle/
+/WebCrawlerPipeline/src/WebCrawlerInitLambda/build.gradle
+/WebCrawlerPipeline/src/WebCrawlerInitLambda/gradlew
+/WebCrawlerPipeline/src/WebCrawlerInitLambda/gradlew.bat
+
+/WebCrawlerPipeline/src/WebCrawlerWorkerLambda/.gradle/*
+/WebCrawlerPipeline/src/WebCrawlerWorkerLambda/gradle/*
+/WebCrawlerPipeline/src/WebCrawlerWorkerLambda/build.gradle
+/WebCrawlerPipeline/src/WebCrawlerWorkerLambda/gradlew
+/WebCrawlerPipeline/src/WebCrawlerWorkerLambda/gradlew.bat\
+/WebCrawlerPipeline/src/WebCrawlerTransformerLambda/WebCrawlerTransformerLambda.iml
+.DS_Store
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/

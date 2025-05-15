@@ -1,0 +1,15 @@
+.mainview-container {
+  padding: 0;
+  /* padding-top: 70px; */
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--gray-color-4);
+}
+
+.mainview-content {
+  margin-top: 70px;
+}
+.small .mainview-content,
+.xsmall .mainview-content {
+  margin-top: 70px;
+}

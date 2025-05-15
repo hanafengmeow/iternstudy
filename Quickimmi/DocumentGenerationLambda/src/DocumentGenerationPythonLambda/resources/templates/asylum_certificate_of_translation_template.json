@@ -1,0 +1,59 @@
+{
+    "template": {
+      "header": [],
+      "footer": [],
+      "body": {
+        "title": [
+          "CERTIFICATE OF TRANSLATION"
+        ],
+        "content": [
+          "I,  {attorney[firstName]} {attorney[lastName]} , am competent to translate from {language}  into  English , and certify that the translation of  {documentTitle}  is true and accurate to the best of my abilities."
+        ],
+        "date_signature": [
+          "\n\n\n {letter_date}                                   __________________"
+        ],
+        "attorney_info": [
+          "Address: {attorney[fullAddress]}",
+          "Phone: {attorney[formattedPhone]}",
+          "Email: {attorney[email]}"
+        ]
+      }
+    },
+    "format": {
+      "body": {
+        "default": {
+          "font_name": "NotoSerifSC-Regular",
+          "font_size": 19,
+          "alignment": "left",
+          "line_height_factor": 1.3,
+          "margin_x": 72,
+          "margin_y": 108,
+          "page_size": "letter"
+        },
+        "title": {
+          "font_name": "NotoSerifSC-Bold",
+          "font_size": 21,
+          "alignment": "center",
+          "line_height_factor": 0.6
+        },
+        "content": {
+            "underline_phrases": [
+          [" {attorney[firstName]} {attorney[lastName]} ", 1],
+          ["{language} ", 1],
+          [" English ", 1],
+          [" {documentTitle} ", 1]
+        ]
+        },
+        "date_signature": {
+            "underline_phrases": [[" {letter_date} ", 1]]
+        },
+        "attorney_info": {
+            "font_size": 18
+        }
+      }
+    }
+  }
+  
+  
+  
+  

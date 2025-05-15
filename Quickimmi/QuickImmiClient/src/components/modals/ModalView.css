@@ -1,0 +1,38 @@
+.modalview-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray-color-semi-transparent);
+  z-index: 1111;
+}
+
+.modalview-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 700px;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.modalview-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.modalview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

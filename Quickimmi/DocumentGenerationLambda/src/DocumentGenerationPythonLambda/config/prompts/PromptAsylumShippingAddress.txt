@@ -1,0 +1,31 @@
+Generate the appropriate shipping address and method for 
+a client based on their state and preferred shipping method.
+The client data is:
+
+{client_data}
+
+The rules for shipping are as follows:
+
+- If the client lives in one of these states: 
+    Florida, 
+    Georgia, 
+    Maryland, 
+    New Jersey, 
+    Pennsylvania, 
+    Texas:
+    - Use the following addresses based on the shipping method:
+        - USPS: ["Via U.S. Postal Service", "U.S. Postal Service (USPS):", "USCIS\nAttn: I-589 (Box 653080)\nP.O. Box 653080\nDallas, TX 75265-3080"]
+        - FedEx: ["Via FedEx", "FedEx", "USCIS\nAttn: I-589 (Box 653080)\n2501 S. State Highway 121 Business Suite 400\nLewisville, TX 75067-8003"]
+        - UPS: ["Via UPS", "UPS", "USCIS\nAttn: I-589 (Box 653080)\n2501 S. State Highway 121 Business Suite 400\nLewisville, TX 75067-8003"]
+        - DHL: ["Via DHL", "DHL", "USCIS\nAttn: I-589 (Box 653080)\n2501 S. State Highway 121 Business Suite 400\nLewisville, TX 75067-8003"]
+
+- If the client lives in any other state or territory:
+    - Use the following addresses based on the shipping method:
+        - USPS: ["Via U.S. Postal Service", "U.S. Postal Service (USPS):", "USCIS\nAttn: I-589\nP.O. Box 6893\nChicago, IL 60680"]
+        - FedEx: ["Via FedEx", "FedEx", "USCIS\nAttn: I-589 (Box 6893)\n131 S. Dearborn St., 3rd Floor\nChicago, IL 60603-5517"]
+        - UPS: ["Via UPS", "UPS", "USCIS\nAttn: I-589 (Box 6893)\n131 S. Dearborn St., 3rd Floor\nChicago, IL 60603-5517"]
+        - DHL: ["Via DHL", "DHL", "USCIS\nAttn: I-589 (Box 6893)\n131 S. Dearborn St., 3rd Floor\nChicago, IL 60603-5517"]
+
+Determine the appropriate address based on the client's state extracted 
+from their shipping address and the specified shipping method. 
+Return the data exactly as specified in the brackets.

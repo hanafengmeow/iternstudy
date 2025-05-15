@@ -1,0 +1,40 @@
+{
+    "partyInformation.firstName": "FirstName",
+    "partyInformation.middleName": "MiddleName",
+    "partyInformation.lastName": "LastName",
+    "partyInformation.address1": "Address1",
+    "partyInformation.address2": "Address2",
+    "partyInformation.city": "City",
+    "partyInformation.state": "State",
+    "partyInformation.zip": "Zip",
+    "partyInformation.alienNumber": "AlienNumber",
+    "partyInformation.allProceedingsCheckbox": "EntryOfAppearanceCB",
+
+    "representation.attorneyCheckbox": "Attorney_CB",
+    "representation.courtName": "CourtName1",
+    "representation.barNumber": "BarNumber1",
+    "representation.country": "Country",
+    "representation.appearanceAttorneyCheckbox": "AttorneyAppearance_CB",
+    "representation.eoirNumber": "EOIRID",
+    "attorneyInfo.firstName": "RepInfoFirstName",
+    "attorneyInfo.middleName": "RepInfoMiddleName",
+    "attorneyInfo.lastName": "RepInfoLastName",
+    "attorneyInfo.address1": "RepInfoAddress1",
+    "attorneyInfo.address2": "RepInfoAddress2",
+    "attorneyInfo.lawFirm": "Law Firm",
+    "attorneyInfo.city": "RepInfoCity",
+    "attorneyInfo.state": "RepInfoState",
+    "attorneyInfo.zip": "RepInfoZip",
+    "attorneyInfo.telephone": "RepInfoPhone",
+    "attorneyInfo.facsimile": "RepInfoFax",
+    "attorneyInfo.email": "RepInfoEmail",
+    "attorneyInfo.newAddressCheckbox": "NewAddressCB",
+
+    "typeOfAppearance.primaryAttorneyCheckbox": "AppearanceType_CB",
+    "typeOfAppearance.proBonoRepresentationDropdown": "ProBono_CB",
+
+    "proofOfService.attorneyName": "AttorneyName",
+    "proofOfService.electronicServiceCheckbox": "Electronic Service",
+
+    "additionalInformation.additionalInformation": "AdditionalInformation"
+}

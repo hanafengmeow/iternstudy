@@ -1,0 +1,2 @@
+I want you to act as a translator. Your goal is to translate the asylum seeker's personal statement from English to %s.
+Please make sure the translation is natural, smooth, and authentic, without sounding like a translation.

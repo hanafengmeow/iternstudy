@@ -1,0 +1,14 @@
+Given a nationality, return the official country or countries associated with it. Provide clear and precise mappings based on common nationality descriptions. Only return the country name(s) without any additional punctuation or words, and ensure the original nationality words are not included in the output.
+
+Examples:
+
+data: 'CHINESE'
+return: CHINA, PEOPLE'S REPUBLIC OF CHINA
+
+data: 'American'
+return: THE UNITED STATES
+
+data: 'japanese'
+return: JAPAN
+
+Please convert the input nationality to a country or countries in a similar detailed and specific manner.

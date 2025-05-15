@@ -1,0 +1,32 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Confi 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- DataSource configuration with HikariCP -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type = "JDBC"/>
+            <dataSource type="com.quick.immi.ai.database.HikariCPDataSourceFactory">
+                <!-- HikariCP configuration -->
+                <property name="driverClassName" value="com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver"/>
+                <property name="jdbcUrl" value="jdbc-secretsmanager:mysql://quickimmi-aurora-db.cluster-c7q20e6oq2se.us-west-1.rds.amazonaws.com:3306/QuickImmiAurora"/>
+                <property name="username" value="AuroraMySqlCdkV2Stack-dev-rds-credentials"/>
+                <!-- Other HikariCP properties -->
+<!--                <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/Test"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="Mj@991108"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- Mapper locations -->
+    <!-- Define the locations of your MyBatis mapper XML files or annotated mapper interfaces -->
+    <mappers>
+        <mapper resource="mapper/ApplicationCaseMapper.xml"/>
+        <mapper resource="mapper/FormGenerationTaskMapper.xml"/>
+        <mapper resource="mapper/DocumentMapper.xml"/>
+        <mapper resource="mapper/LawyerMapper.xml"/>
+    </mappers>
+</configuration>

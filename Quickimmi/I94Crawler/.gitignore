@@ -1,0 +1,9 @@
+.gradle
+build/
+.idea
+src/.DS_Store
+.DS_Store
+.aws-sam/
+.project
+# JDT-specific (Eclipse Java Development Tools)
+.classpath

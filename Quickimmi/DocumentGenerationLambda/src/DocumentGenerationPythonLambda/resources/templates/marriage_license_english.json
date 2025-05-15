@@ -1,0 +1,74 @@
+{
+    "content": {
+        "header": [],
+        "footer": [],
+        "body": {
+            "title": [
+                "MARRIAGE LICENSE"
+            ],
+            "license_info": [
+                "Holder of License: {marriageCertificate[licenseHolder]}",
+                "Date of Registration: {marriageCertificate[registrationDate]}",
+                "License Number: {marriageCertificate[licenseNumber]}"
+            ],
+            "party_A_details_col1": [
+                "Name: {marriageCertificate[holderName]}",
+                "Nationality: {marriageCertificate[nationality]}",
+                "Identification Number: {marriageCertificate[idNumber]}"
+            ],
+            "party_A_details_col2": [
+                "Gender: {marriageCertificate[gender]}",
+                "Date of Birth: {marriageCertificate[birthDate]}"
+            ],
+            "party_B_details_col1": [
+                "Name: {marriageCertificate[spouseName]}",
+                "Nationality: {marriageCertificate[spouseNationality]}",
+                "Identification Number: {marriageCertificate[spouseIdNumber]}"
+            ],
+            "party_B_details_col2": [
+                "Gender: {marriageCertificate[spouseGender]}",
+                "Date of Birth: {marriageCertificate[spouseBirthDate]}"
+            ],
+            "seal": [
+                "Seal: {marriageCertificate[seal]}"
+            ]
+        }
+    },
+    "format": {
+        "body": {
+            "default": {
+                "page_size": "letter",
+                "font_name": "Times-Roman",
+                "alignment": "left",
+                "font_size": 12,
+                "line_height_factor": 1.4,
+                "margin_x": 74,
+                "margin_y": 90
+            },
+            "title": {
+                "font_name": "Times-Bold",
+                "alignment": "center"
+            },
+            "license_info": {
+                "line_height_factor": 1.5
+            },
+            "party_A_details_col1": {
+                "y_position": 500
+            },
+            "party_A_details_col2": {
+                "y_position": 500,
+                "x_position": 300
+            },
+            "party_B_details_col1": {
+                "y_position": 370
+            },
+            "party_B_details_col2": {
+                "y_position": 370,
+                "x_position": 300
+            },
+            "seal": {
+                "y_position": 220
+            }
+        }
+    }
+}

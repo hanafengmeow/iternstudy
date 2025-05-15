@@ -1,0 +1,100 @@
+{
+    "representative": {
+      "uscisOnlineAccountNumber": "Representative USCIS Account Number",
+      "lastName": "Representative Last Name",
+      "firstName": "Representative First Name",
+      "middleName": "Representative Middle Name",
+      "streetNumberAndName": "Representative Street Number and Name",
+      "aptCheckbox": "STE",
+      "steCheckbox": "FLR",
+      "flrCheckbox": "APT",
+      "aptSteFlrNumber": "Representative Apt/Ste/Flr Number",
+      "city": "Representative City",
+      "stateDropdown": "NY",
+      "zipCode": "Representative Zip Code",
+      "province": "Representative Province",
+      "postalCode": "Representative Postal Code",
+      "country": "Representative Country",
+      "daytimeTelephoneNumber": "Representative Daytime Phone Number",
+      "mobileTelephoneNumber": "Representative Mobile Phone Number",
+      "emailAddress": "Representative Email Address",
+      "faxNumber": "Representative Fax Number"
+    },
+    "representativeEligibility": {
+      "eligibleAttorneyCheckbox": "Y",
+      "licensingAuthority": "Licensing Authority",
+      "barNumber": "Bar Number",
+      "amNotCheckbox": "Y",
+      "amCheckbox": "N",
+      "nameofLawFirm": "Name of Law Firm",
+      "accreditedRepresentativeCheckbox": "Y",
+      "nameofRecognizedOrganization": "Name of Recognized Organization",
+      "dateofAccreditation": "Date of Accreditation",
+      "associateCheckbox": "Y",
+      "nameofPreviousRepresentative": "Name of Previous Representative",
+      "lawGraduateCheckbox": "Y",
+      "nameofLawStudentOrLawGraduate": "Name of Law Student Or Law Graduate"
+    },
+    "appearance": {
+      "uscisCheckbox": "Y",
+      "formNumbers": "Form Numbers",
+      "iceCheckbox": "Y",
+      "specificMatterICE": "Specific Matter ICE",
+      "cbpCheckbox": "Y",
+      "specificMatterCBP": "Specific Matter CBP",
+      "receiptNumber": "Receipt Number",
+      "applicantCheckbox": "R",
+      "petitionerCheckbox": "A",
+      "requestorCheckbox": "B",
+      "beneficiaryandDerivativeCheckbox": "P",
+      "RespondentCheckbox": "BD",
+      "clientLastName": "Client Last Name",
+      "clientFirstName": "Client First Name",
+      "clientMiddleName": "Client Middle Name",
+      "clientNameofEntity": "Client Name of Entity",
+      "clientTitleofAuthorizedSignatoryForEntity": "Client Title of Authorized Signatory For Entity",
+      "clientUSCISOnlineAcctNumber": "Client USCIS Online Account Number",
+      "clientANumber": "Client A-Number",
+      "clientDaytimeTelephoneNumber": "Client Daytime Telephone Number",
+      "clientMobileTelephoneNumber": "Client Mobile Telephone Number",
+      "clientEMail": "Client Email",
+      "clientStreetNumberName": "Client Street Number and Name",
+      "aptCheckbox": "STE",
+      "steCheckbox": "FLR",
+      "flrCheckbox": "APT",
+      "clientAptNumber": "Client Apt Number",
+      "clientCity": "Client City",
+      "stateDropdown": "CA",
+      "clientZipCode": "Client Zip Code",
+      "clientProvince": "Client Province",
+      "clientPostalCode": "Client Postal Code",
+      "clientCountry": "Client Country"
+    },
+    "clientConsent": {
+      "noticetoRepresentativeCheckbox": "Y",
+      "secureIDtoRepresentativeCheckbox": "Y",
+      "noticetoMeCheckbox": "Y",
+      "signatureofClient": "Signature of Client",
+      "dateofSignatureClient": "Date of Signature Client"
+    },
+    "representativeSignature": {
+      "signatureofRepresentative": "Signature of Representative",
+      "dateofSignatureRepresentative": "Date of Signature Representative",
+      "signatureofLawGraduate": "Signature of Law Graduate",
+      "dateofSignatureLawGraduate": "Date of Signature Law Graduate"
+    },
+    "additionalInfo": {
+      "lastName": "Additional Info Last Name",
+      "firstName": "Additional Info First Name",
+      "middleName": "Additional Info Middle Name",
+      "information": [
+        {
+          "pageNumber": "Page Number",
+          "partNumber": "Part Number",
+          "itemNumber": "Item Number",
+          "infoDetails": "Information Details"
+        }
+      ]
+    }
+  }
+  

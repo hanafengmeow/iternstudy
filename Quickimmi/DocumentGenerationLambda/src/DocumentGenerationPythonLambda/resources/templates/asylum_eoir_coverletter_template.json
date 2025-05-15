@@ -1,0 +1,101 @@
+{
+    "content": {
+        "header": [],
+        "footer": [],
+        "body": {
+            "lawyer_info": [
+                "{attorney[firstName]} {attorney[lastName]}- SBN#{attorney[attorneyBarNo]}",
+                "{attorney[companyName]}", 
+                "Phone: {attorney[phone]}", 
+                "Email: {attorney[email]}",
+                "{attorney[address]}",
+                "{attorney[city]}, {attorney[state]} {attorney[zip]}"
+            ],
+            "title": [
+                "UNITED STATES DEPARTMENT OF JUSTICE",
+                "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
+                "OFFICE OF THE IMMIGRATION JUDGE",
+                "{caseInfo[courtAddress]}",
+                "{caseInfo[courtCity]}, {caseInfo[courtState]} {caseInfo[courtZip]}"
+            ],
+            "matter": [
+                "IN THE MATTER OF"
+            ],
+            "name": [
+                "{client[firstNameUpper]} {client[lastNameUpper]},\n{client[additionalApplicantsUpper]}"
+            ],
+            "processing": [
+                "IN REMOVAL PROCEEDINGS"
+            ],
+            "file": [
+                "FILE Nos.:"
+            ],
+            "alienNumber": [
+                "[{client[alienNumber]}]\n{client[additionalApplicantAlienNumber]}"
+            ],
+            "judge": [
+                "Immigration Judge: {caseInfo[judgeName]}",
+                "Next Hearing: {caseInfo[hearingDate]} at {caseInfo[hearingTime]}"
+            ],
+            "document": [
+                "THE RESPONDENT’S SUBMISSION OF {documentUpper}"
+            ]
+        }
+    },
+    "format": {
+        "footer": {
+            "font_name": "Times-Bold",
+            "font_size": 9,
+            "x_position": 72,
+            "y_position": 40,
+            "line_height": 13.5,
+            "alignment": "center",
+            "show_page_number": true
+        },
+        "body": {
+            "default": {
+                "page_size": "letter",
+                "font_name": "Times-Bold",
+                "alignment": "left",
+                "font_size": 12,
+                "line_height_factor": 1,
+                "margin_x": 74,
+                "margin_y": 90
+            },
+            "lawyer_info": {
+                "line_height_factor": 0.9
+            },
+            "title": {
+                "y_position": 540,
+                "alignment": "center",
+                "line_height_factor": 0.6
+            },
+            "file": {
+                "x_position": 364,
+                "y_position": 412.7
+            },
+            "alienNumber": {
+                "x_position": 425,
+                "y_position": 412.7
+            },
+            "matter": {
+                "y_position": 398.9
+            },
+            "name": {
+                "y_position": 385.09,
+                "line_height_factor": 1.1
+            },
+            "processing": {
+                "y_position": 290
+            },
+            "judge": {
+                "y_position": 207.29,
+                "line_height_factor": 0.8
+            },
+            "document": {
+                "y_position": 120,
+                "alignment": "center"
+            }
+        }
+    }
+}

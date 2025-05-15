@@ -1,0 +1,10 @@
+{
+    "partyInformation.entryOfAppearanceForDropdown":["All", "Custody/Bond", "Non-Custody/Bond"],
+    "representation.representationTypeDropdown": ["Authorized to Practice Dec 23 1952", "Reputable Individual", "Representative", "Accredited Foreign Government Official", "Attorney", "Law Student/Graduate"],
+    "representation.attorneyAppearanceDropdown": ["0", "1"],
+    "contactInformation.newAddressCheckbox": "Yes",
+    "typeOfAppearance.typeOfAppearanceDropdown": ["Primary", "Non-Primary"],
+    "typeOfAppearance.isOnBehalfOfCheckbox": "Yes",
+    "typeOfAppearance.proBonoRepresentationDropdown":["No", "Yes"],
+    "proofOfService.electronicServiceCheckbox":"Yes"
+}

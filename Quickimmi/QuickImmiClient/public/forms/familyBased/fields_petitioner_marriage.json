@@ -1,0 +1,131 @@
+{
+  "id": "fields_petitioner_marriage",
+  "version": "2024-04-01",
+  "type": "fields",
+  "fields": [
+    {
+      "label": "text_HowManyTimesHaveYouBeenMarried",
+      "placeholder": "text_HowManyTimesHaveYouBeenMarried",
+      "id": "part2.16_HowManyTimesHaveYouBeenMarried",
+      "key": "petitioner.timesMarried",
+      "control": "text"
+    },
+    {
+      "label": "text_MaritalStatus",
+      "id": "part2.17_MaritalStatus",
+      "key": "petitioner.currentMartialStatusSingleCheckbox,petitioner.currentMartialStatusMarriedCheckbox,petitioner.currentMartialStatusDivorcedCheckbox,petitioner.currentMartialStatusWidowedCheckbox,petitioner.currentMartialStatusSeparatedCheckbox,petitioner.currentMartialStatusAnnulledCheckbox",
+      "control": "select",
+      "options": [
+        {
+          "value": "Single",
+          "label": "text_Single",
+          "keyValue": "true,false,false,false,false,false"
+        },
+        {
+          "value": "Married",
+          "label": "text_Married",
+          "keyValue": "false,true,false,false,false,false"
+        },
+        {
+          "value": "Divorced",
+          "label": "text_Divorced",
+          "keyValue": "false,false,true,false,false,false"
+        },
+        {
+          "value": "Widowed",
+          "label": "text_Widowed",
+          "keyValue": "false,false,false,true,false,false"
+        },
+        {
+          "value": "Separated",
+          "label": "text_Separated",
+          "keyValue": "false,false,false,false,true,false"
+        },
+        {
+          "value": "Annulled",
+          "label": "text_Annulled",
+          "keyValue": "false,false,false,false,false,true"
+        }
+      ]
+    },
+    {
+      "label": "text_DateOfCurrentMarriage",
+      "id": "16",
+      "key": "petitioner.dateOfCurrentMarriage",
+      "control": "datepickerWithNotMarried"
+    },
+    {
+      "label": "text_CityOfCurrentMarriage",
+      "id": "16",
+      "key": "petitioner.cityOfCurrentMarriage",
+      "control": "text"
+    },
+    {
+      "label": "text_StateOfCurrentMarriage",
+      "id": "16",
+      "key": "petitioner.stateOfCurrentMarriage",
+      "control": "text"
+    },
+    {
+      "label": "text_ProvinceOfCurrentMarriage",
+      "id": "16",
+      "key": "petitioner.provinceOfCurrentMarriage",
+      "control": "text"
+    },
+    {
+      "label": "text_CountryOfCurrentMarriage",
+      "id": "16",
+      "key": "petitioner.countryOfCurrentMarriage",
+      "control": "select",
+      "options": "CountryOptions"
+    },
+    {
+      "label": "text_Spouse",
+      "hideHeader": "true",
+      "id": "10.a-10.i",
+      "key": "count-petitioner.spouses",
+      "control": "sortable_section",
+      "fields": [
+        {
+          "label": "text_FirstName",
+          "placeholder": "text_FirstName",
+          "id": "first_name",
+          "key": "petitioner.spouses[].firstName",
+          "control": "text"
+        },
+        {
+          "label": "text_MiddleName",
+          "placeholder": "text_MiddleName",
+          "id": "middle_name",
+          "key": "petitioner.spouses[].middleName",
+          "control": "component_textbox_na"
+        },
+        {
+          "label": "text_LastName",
+          "placeholder": "text_LastName",
+          "id": "last_name",
+          "key": "petitioner.spouses[].lastName",
+          "control": "text"
+        },
+        {
+          "label": "text_DateMarriageEnded",
+          "placeholder": "text_MM/YYYY",
+          "id": "20",
+          "key": "petitioner.spouses[].dateMarriageEnded",
+          "control": "datepicker"
+        }
+      ]
+    },
+    {
+      "label": "",
+      "control": "divider"
+    },
+    {
+      "label": "",
+      "placeholder": "text_AddASpouse",
+      "id": "address_berfore_us",
+      "key": "count-petitioner.spouses",
+      "control": "component_add_item"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+.ant-btn.ant-btn-lg.request-demo-button {
+  color: var(--primary-color);
+  background: var(--white-color);
+
+  width: 240px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 40px;
+}
+
+.signup-entry {
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: 160px 0;
+}
+
+.signup-entry-header {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: 70px;
+  color: var(--white-color);
+  margin-bottom: 80px;
+}
+
+.xsmall .signup-entry-header,
+.small .signup-entry-header {
+  font-size: var(--font-size-h3);
+  line-height: 100px;
+}
+
+.signup-entry-text {
+  font-size: 60px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  width: 90%;
+}
+.small .signup-entry-text,
+.xsmall .signup-entry-text {
+  font-size: 45px;
+  font-weight: 750;
+}
+
+.signup-entry-text svg {
+  position: absolute;
+  left: 5px;
+  bottom: -8px;
+}
+
+.signup-entry-input {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.signup-entry-input::placeholder {
+  color: var(--white-color-transparent-2);
+}
+
+.signup-entry-input:hover,
+.signup-entry-input:focus {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.signup-entry-button {
+  border: 1px solid var(--white-color);
+}

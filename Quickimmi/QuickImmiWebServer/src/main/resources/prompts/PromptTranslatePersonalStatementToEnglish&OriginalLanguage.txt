@@ -1,0 +1,13 @@
+User could input a personal statement written in ENGLISH or a non-english language.
+1, Language Detection: Detect the language of the input personal statement.
+If the input is ENGLISH, keep it as the English version and translate it into the user's native language: %s.
+If the input is NOT ENGLISH, translate it into ENGLISH and keep the original input as 'OriginalLanguagePS'.
+2, Response Format:Return the result in this JSON format:
+{
+  "EnglishPS": "english version of personal statement",
+  "OriginalLanguagePS": "original language version of personal statement"
+}
+3, Important Clarifications:
+If the input is already in ENGLISH, do not translate it again into English. Only translate it into the user's native language: %s.
+If the input is in a non-English language, ensure that the English translation and the original input are provided as 'EnglishPS' and 'OriginalLanguagePS', respectively.
+4, The translation should be natural, smooth, and authentic, without sounding like a machine-generated translation.

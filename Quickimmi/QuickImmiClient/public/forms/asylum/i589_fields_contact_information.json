@@ -1,0 +1,123 @@
+{
+  "id": "i589_fields_contact_information",
+  "version": "2024-04-01",
+  "type": "fields",
+  "fields": [
+    {
+      "label": "text_TelephoneNumberInUs",
+      "placeholder": "text_PhoneNumberFormat",
+      "id": "telephone_number",
+      "key": "applicant.telePhoneAreaCode,applicant.telePhoneNumber",
+      "control": "text",
+      "format": "PhoneNumberRegex"
+    },
+    {
+      "label": "text_ResidentialAddressInUs",
+      "id": "residential_address_in_us",
+      "control": "group",
+      "maxChildPerRow": "3",
+      "fields": [
+        {
+          "label": "text_Street",
+          "placeholder": "text_Street",
+          "id": "street",
+          "key": "applicant.streetNumberAndName",
+          "control": "text"
+        },
+        {
+          "label": "text_ApartmentNumber",
+          "placeholder": "text_ApartmentNumber",
+          "id": "apartment_number",
+          "key": "applicant.aptNumber",
+          "control": "component_textbox_na"
+        },
+        {
+          "label": "text_City",
+          "placeholder": "text_City",
+          "id": "city",
+          "key": "applicant.city",
+          "control": "text"
+        },
+        {
+          "label": "text_State",
+          "placeholder": "text_State",
+          "id": "state",
+          "key": "applicant.state",
+          "control": "text"
+        },
+        {
+          "label": "text_ZipCode",
+          "placeholder": "text_ZipCode",
+          "id": "zip_code",
+          "key": "applicant.zipCode",
+          "control": "text"
+        }
+      ]
+    },
+    {
+      "label": "text_MailingAddressSameAsResidentialAddress",
+      "hideHeader": "true",
+      "id": "mailing_address_same_as_residential_address",
+      "control": "component_mailing_same_as_residential"
+    },
+    {
+      "label": "text_TelephoneNumberOfMailingInUs",
+      "placeholder": "text_PhoneNumberFormat",
+      "id": "telephone_number_mailing",
+      "key": "applicant.telePhoneAreaCodeOfMailingAddress,applicant.telePhoneNumberOfMailingAddress",
+      "control": "text",
+      "format": "PhoneNumberRegex"
+    },
+    {
+      "label": "text_MailingAddressInUs",
+      "id": "mailing_address_in_us",
+      "control": "group",
+      "maxChildPerRow": "3",
+      "fields": [
+        {
+          "label": "text_InCareOfName",
+          "placeholder": "text_InCareOfName",
+          "id": "in_care_of_name_mailing_address",
+          "key": "applicant.inCareOf",
+          "control": "text",
+          "className": "form-field-single-line"
+        },
+        {
+          "label": "text_Street",
+          "placeholder": "text_Street",
+          "id": "street_mailing_address",
+          "key": "applicant.streetNumberAndNameOfMailingAddress",
+          "control": "text"
+        },
+        {
+          "label": "text_ApartmentNumber",
+          "placeholder": "text_ApartmentNumber",
+          "id": "apartment_number_mailing_address",
+          "key": "applicant.aptNumberOfMailingAddress",
+          "control": "component_textbox_na"
+        },
+        {
+          "label": "text_City",
+          "placeholder": "text_City",
+          "id": "city_mailing_address",
+          "key": "applicant.cityOfMailingAddress",
+          "control": "text"
+        },
+        {
+          "label": "text_State",
+          "placeholder": "text_State",
+          "id": "state_mailing_address",
+          "key": "applicant.stateOfMailingAddress",
+          "control": "text"
+        },
+        {
+          "label": "text_ZipCode",
+          "placeholder": "text_ZipCode",
+          "id": "zip_code_mailing_address",
+          "key": "applicant.zipCodeOfMailingAddress",
+          "control": "text"
+        }
+      ]
+    }
+  ]
+}

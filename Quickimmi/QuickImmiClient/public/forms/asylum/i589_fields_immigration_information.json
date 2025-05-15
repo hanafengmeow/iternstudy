@@ -1,0 +1,44 @@
+{
+  "id": "i589_fields_immigration_information",
+  "version": "2024-04-01",
+  "type": "fields",
+  "fields": [
+    {
+      "label": "text_UscisOnlineAccountNumber",
+      "placeholder": "text_EnterIfApplicable",
+      "id": "uscis_online_account_number",
+      "key": "applicant.uscisOnlineAccountNumber",
+      "control": "component_textbox_na"
+    },
+    {
+      "label": "text_SSN",
+      "placeholder": "text_EnterIfApplicable",
+      "id": "ssn",
+      "key": "applicant.ssn",
+      "control": "component_textbox_na"
+    },
+    {
+      "label": "text_ImmigrationCourt",
+      "id": "immigration_court",
+      "key": "applicant.immigrationCourtProceedingACheckbox,applicant.immigrationCourtProceedingBCheckbox,applicant.immigrationCourtProceedingCCheckbox",
+      "control": "radio",
+      "options": [
+        {
+          "value": "never",
+          "label": "text_ImmigrationCourtNever",
+          "keyValue": "true,false,false"
+        },
+        {
+          "value": "now",
+          "label": "text_ImmigrationCourtNow",
+          "keyValue": "false,true,false"
+        },
+        {
+          "value": "past",
+          "label": "text_ImmigrationCourtPast",
+          "keyValue": "false,false,true"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "attorneyUSCISOnlineAccountNumber": "987654321",
+  "g28AttachedCheckbox": "1",
+  "applyingReason": {
+    "initialPermissionToAcceptEmploymentCheckbox": "1",
+    "replacementEmploymentDocumentCheckbox": "2",
+    "renewPermissionCheckbox": "3"
+  },
+  "applicant": {
+    "currentName": {
+      "firstName": "John",
+      "middleName": "A",
+      "lastName": "Doe"
+    },
+    "otherUsedNames": [
+      {
+        "firstName": "Jonathan",
+        "middleName": "B",
+        "lastName": "Doe"
+      }
+    ],
+    "mailAddress": {
+      "inCareOfName": "John Doe",
+      "streetNumberAndName": "123 Elm St",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "aptSteFlrNumber": "2A",
+      "city": "Los Angeles",
+      "state": "WA",
+      "zipCode": "90001",
+      "province": "province",
+      "postalCode": "postalCode",
+      "country": "USA"
+    },
+    "sameAsPhysicalAddressYesCheckbox": "Y",
+    "sameAsPhysicalAddressNoCheckbox": "N",
+    "physicalAddress": {
+      "inCareOfName": "inCareOfName",
+      "streetNumberAndName": "streetNumberAndName",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "aptSteFlrNumber": "123",
+      "city": "city",
+      "state": "WA",
+      "zipCode": null,
+      "province": null,
+      "postalCode": null,
+      "country": null
+    },
+    "alienNumber": "A123456789",
+    "uscisOnlineAccountNumber": "456789123",
+    "genderMaleCheckbox": "Y",
+    "genderFemaleCheckbox": "N",
+    "singleMaritalStatusCheckbox": "Single",
+    "marriedMaritalStatusCheckbox": "Married",
+    "divorcedMaritalStatusCheckbox": "Divorced",
+    "widowedMaritalStatusCheckbox": "Widowed",
+    "previousFilledFormYesCheckbox": "Y",
+    "previousFilledFormNoCheckbox": "N",
+    "issuedSSNYesCheckbox": "Y",
+    "issuedSSNNoCheckbox": "N",
+    "ssn": "123-45-6789",
+    "wantSSNIssueSSNYesCheckbox": "Y",
+    "wantSSNIssueSSNNoCheckbox": "N",
+    "consentDisclosureYesCheckbox": "Y",
+    "consentDisclosureNoCheckbox": "N",
+    "fatherLastName": "Doe",
+    "fatherFirstName": "Robert",
+    "MotherLastName": "Smith",
+    "MotherFirstName": "Laura",
+    "firstCountry": "Canada",
+    "secondCountry": "USA",
+    "birthCity": "Toronto",
+    "birthState": "Ontario",
+    "birthCountry": "Canada",
+    "birthDate": "1990-01-15",
+    "lastArrival": {
+      "i94": null,
+      "passportNumber": "X123456789",
+      "travelDocumentNumber": null,
+      "issueCountry": "Canada",
+      "expireDate": "2025-05-01",
+      "lastArrivalDate": "2022-05-10",
+      "lastArrivalPlace": "Los Angeles International Airport",
+      "lastArrivalImmigrationStatus": "F-1",
+      "currentImmigrationStatus": "F-1",
+      "sevisNumber": "N1234567890"
+    }
+  },
+  "eligibilityCategory": {
+    "eligibilityCategoryFirst": "C",
+    "eligibilityCategorySecond": "08",
+    "eligibilityCategoryThird": null,
+    "degree": "Bachelor of Science",
+    "employerNameInEVerify": "Tech Solutions Inc.",
+    "employerEVerifyIdNumber": "123456",
+    "receiptNumber": "EAC1234567890",
+    "hasBeenArrestedYesFor30Checkbox": "Y",
+    "hasBeenArrestedNoFor30Checkbox": "N",
+    "receiptNumberOfSpouseOrParent": null,
+    "hasBeenArrestedYesFor31bCheckbox": "Y",
+    "hasBeenArrestedNoFor31bCheckbox": "N"
+  },
+  "applicantStatement": {
+    "readAndUnderstandEnglishCheckbox": "A",
+    "readByInterpreterCheckbox": "B",
+    "readLanguage": null,
+    "preparedByOtherCheckbox": "C",
+    "prepareName": null
+  },
+  "applicantContact": {
+    "contact": {
+      "daytimePhone": "+1-555-123-4567",
+      "mobilePhone": "+1-555-987-6543",
+      "email": "john.doe@email.com"
+    },
+    "salvadoranOrGuatermalanCheckbox": "A"
+  },
+  "interpreter": {
+    "lastName": "Gonzalez",
+    "firstName": "Maria",
+    "organizationName": null,
+    "address": {
+      "inCareOfName": "Maria Gonzalez",
+      "streetNumberAndName": "456 Oak St",
+      "aptCheckbox": " FLR ",
+      "steCheckbox": " APT ",
+      "flrCheckbox": " STE ",
+      "aptSteFlrNumber": "3B",
+      "city": "Miami",
+      "state": "WA",
+      "zipCode": "33101",
+      "province": null,
+      "postalCode": null,
+      "country": "USA"
+    },
+    "contact": {
+      "daytimePhone": "+1-555-321-9876",
+      "mobilePhone": null,
+      "email": "maria.gonzalez@email.com"
+    },
+    "fluentLanguage": "Spanish"
+  },
+  "preparer": {
+    "lastName": "Johnson",
+    "firstName": "Alice",
+    "organizationName": "Legal Assistance Inc.",
+    "address": {
+      "inCareOfName": "Alice Johnson",
+      "streetNumberAndName": "789 Pine St",
+      "aptCheckbox": " FLR ",
+      "steCheckbox": " APT ",
+      "flrCheckbox": " STE ",
+      "aptSteFlrNumber": "Suite 100",
+      "city": "New York",
+      "state": "WA",
+      "zipCode": "10001",
+      "province": null,
+      "postalCode": null,
+      "country": "USA"
+    },
+    "contact": {
+      "daytimePhone": "+1-555-654-3210",
+      "mobilePhone": null,
+      "email": "alice.johnson@legalinc.com"
+    },
+    "notAttorneyCheckbox": "A",
+    "attorneyCheckbox": "B",
+    "extendCheckbox": "Y",
+    "notExtendCheckbox": "N"
+  },
+  "additionalInfo": {
+    "applicantName": {
+      "firstName": "John",
+      "middleName": "A",
+      "lastName": "Doe"
+    },
+    "alienNumber": "A123456789",
+    "a3PageNumber": "12",
+    "a3PartNumber": "B",
+    "a3ItemNumber": "34",
+    "d3Content": "No additional information",
+    "a4PageNumber": "23",
+    "a4PartNumber": "C",
+    "a4ItemNumber": "45",
+    "d4Content": "No additional information",
+    "a5PageNumber": "34",
+    "a5PartNumber": "D",
+    "a5ItemNumber": "56",
+    "d5Content": "No additional information",
+    "a6PageNumber": "45",
+    "a6PartNumber": "E",
+    "a6ItemNumber": "67",
+    "d6Content": "No additional information",
+    "a7PageNumber": "56",
+    "a7PartNumber": "F",
+    "a7ItemNumber": "78",
+    "d7Content": "No additional information"
+  }
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quick.immi.ai.dao.ApplicationCaseMapper">
+
+    <insert id="create" parameterType="com.quick.immi.ai.entity.ApplicationCase">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into application_case_table (`user_id`, `applicant_name`, `case_name`, `type`, `sub_type`, `current_step`, `progress`, `email`, `created_by`, `created_by_lawyer`, `assigned_lawyer`, `created_at`, `updated_at`)
+        values(#{userId}, #{applicantName}, #{caseName}, #{type}, #{subType}, #{currentStep}, #{progress}, #{email}, #{createdBy}, #{createdByLawyer}, #{assignedLawyer}, #{createdAt}, #{updatedAt});
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        delete from application_case_table where id = #{id}
+    </delete>
+
+    <select id="queryByCustomer" parameterType="com.quick.immi.ai.dto.request.CaseQueryRequest" resultType="com.quick.immi.ai.entity.ApplicationCase">
+        SELECT id, user_id, applicant_name, case_name, type, sub_type, current_step, progress, updated_at
+        FROM application_case_table
+        WHERE
+        user_id = #{lawyerId}
+        <if test="query != null">
+            AND (applicant_name LIKE CONCAT('%', #{query}, '%') OR id = #{query})
+        </if>
+        <if test="currentStep != null">
+            AND current_step = #{currentStep}
+        </if>
+        ORDER BY
+        <choose>
+            <when test="sortedBy == 'updatedAt'">
+                updated_at DESC
+            </when>
+            <when test="sortedBy == 'id'">
+                id DESC
+            </when>
+            <when test="sortedBy == 'caseName'">
+                case_name ASC
+            </when>
+            <!-- Add additional sort conditions as needed -->
+            <otherwise>
+                created_at DESC <!-- Default sorting condition -->
+            </otherwise>
+        </choose>
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getCountByCustomer" parameterType="int" resultType="java.lang.Integer">
+        SELECT COUNT(id) FROM application_case_table WHERE user_id = #{userId}
+    </select>
+
+    <select id="queryByLawyer" parameterType="com.quick.immi.ai.dto.request.CaseQueryRequest" resultType="com.quick.immi.ai.entity.ApplicationCase">
+        SELECT id, user_id, applicant_name, case_name, type, sub_type, current_step, progress, updated_at
+        FROM application_case_table
+        WHERE
+        assigned_lawyer = #{lawyerId}
+        <if test="query != null">
+            AND (applicant_name LIKE CONCAT('%', #{query}, '%') OR id = #{query})
+        </if>
+        <if test="currentStep != null">
+            AND current_step = #{currentStep}
+        </if>
+        ORDER BY
+        <choose>
+            <when test="sortedBy == 'updatedAt'">
+                updated_at DESC
+            </when>
+            <when test="sortedBy == 'id'">
+                id DESC
+            </when>
+            <when test="sortedBy == 'caseName'">
+                case_name ASC
+            </when>
+            <!-- Add additional sort conditions as needed -->
+            <otherwise>
+                created_at DESC <!-- Default sorting condition -->
+            </otherwise>
+        </choose>
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getCountByLawyer" parameterType="int" resultType="java.lang.Integer">
+        SELECT COUNT(id) FROM application_case_table WHERE assigned_lawyer = #{lawyerId}
+    </select>
+
+    <select id="get" parameterType="java.lang.Long" resultType="com.quick.immi.ai.entity.ApplicationCase">
+        SELECT * FROM application_case_table WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.quick.immi.ai.entity.ApplicationCase">
+        update application_case_table
+        <set>
+            <if test="applicantName != null">
+                applicant_name = #{applicantName},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="caseName != null">
+                case_name = #{caseName},
+            </if>
+            <if test="progress != null">
+                progress = #{progress},
+            </if>
+            <if test="currentStep != null">
+                current_step = #{currentStep},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="profile != null">
+                profile = #{profile},
+            </if>
+            <if test="uscisReceiptNumber != null">
+                uscis_receipt_number = #{uscisReceiptNumber},
+            </if>
+            <if test="assignedLawyer != null">
+                assigned_lawyer = #{assignedLawyer},
+            </if>
+            <if test="createdBy != null">
+                created_by = #{createdBy},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt},
+            </if>
+            <if test="createdByLawyer != null">
+                created_by_lawyer = #{createdByLawyer},
+            </if>
+
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+
+    <update id="updateProgress" parameterType="map">
+        update application_case_table set current_step = #{currentStep}, progress = #{progress} WHERE id = #{id}
+    </update>
+
+    <update id="updateTranslatedProfile" parameterType="map">
+        update application_case_table set translated_profile = #{translatedProfile} WHERE id = #{id}
+    </update>
+</mapper>

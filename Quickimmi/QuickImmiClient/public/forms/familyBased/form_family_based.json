@@ -1,0 +1,228 @@
+{
+  "id": "form_family_based",
+  "version": "2024-04-01",
+  "type": "form",
+  "steps": [
+    {
+      "label": "text_Relationship",
+      "id": "part1",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Filling",
+          "id": "part1",
+          "type": "level2",
+          "referenceId": "familyBased/fields_relationship_filling"
+        }
+      ]
+    },
+    {
+      "label": "text_Petitioner",
+      "id": "part2",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Basic",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_basic"
+        },
+        {
+          "label": "text_Address",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_address"
+        },
+        {
+          "label": "text_Marriage",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_marriage"
+        },
+        {
+          "label": "text_Parents",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_parents"
+        },
+        {
+          "label": "text_Employment",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_employment"
+        },
+        {
+          "label": "text_Biographic",
+          "id": "part3",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_biographic"
+        },
+        {
+          "label": "text_Additional",
+          "id": "part2",
+          "type": "level2",
+          "referenceId": "familyBased/fields_petitioner_additional"
+        }
+      ]
+    },
+    {
+      "label": "text_Beneficiary",
+      "id": "part4",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Basic",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_basic"
+        },
+        {
+          "label": "text_Address",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_address"
+        },
+        {
+          "label": "text_Marriage",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_marriage"
+        },
+        {
+          "label": "text_Family",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_family"
+        },
+        {
+          "label": "text_Employment",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_employment"
+        },
+        {
+          "label": "text_Additional",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_additional"
+        },
+        {
+          "label": "text_Additional2",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_additional2"
+        }
+      ]
+    },
+    {
+      "label": "text_Eligibility",
+      "id": "part4",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Organization",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_eligibility_organization"
+        },
+        {
+          "label": "text_Part2",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_eligibility_part2"
+        },
+        {
+          "label": "text_Part3",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_eligibility_part3"
+        },
+        {
+          "label": "text_Part4",
+          "id": "part4",
+          "type": "level2",
+          "referenceId": "familyBased/fields_beneficiary_eligibility_part4"
+        }
+      ]
+    },
+    {
+      "label": "text_PriorPetition",
+      "id": "part5",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Relatives",
+          "id": "part5",
+          "type": "level2",
+          "referenceId": "familyBased/fields_previous_petition_part1"
+        }
+      ]
+    },
+    {
+      "label": "text_Declaration",
+      "id": "part6",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_Statement",
+          "id": "part6",
+          "type": "level2",
+          "referenceId": "familyBased/fields_statement_statement"
+        },
+        {
+          "label": "text_Interpreter",
+          "id": "part6",
+          "type": "level2",
+          "referenceId": "familyBased/fields_statement_interpreter_details"
+        }
+      ]
+    },
+    {
+      "label": "text_SponsorList",
+      "id": "part7",
+      "type": "level1",
+      "steps": [
+        {
+          "label": "text_SponsorList",
+          "id": "part7",
+          "type": "level2",
+          "referenceId": "familyBased/fields_sponsor_list"
+        }
+      ]
+    },
+    {
+      "label": "text_ViewDocuments",
+      "id": "documents",
+      "type": "level1",
+      "standalone": "true",
+      "steps": [
+        {
+          "label": "text_ViewDocuments",
+          "id": "documents",
+          "type": "level2",
+          "referenceId": "familyBased/fields_view_reports"
+        },
+        {
+          "label": "text_ViewMergedDocuments",
+          "id": "documents",
+          "type": "level2",
+          "referenceId": "familyBased/fields_view_merged_documents"
+        }
+      ]
+    },
+    {
+      "label": "text_ViewFormSummary",
+      "id": "form_summary",
+      "type": "level1",
+      "standalone": "true",
+      "steps": [
+        {
+          "label": "text_ViewFormSummary",
+          "id": "form_summary",
+          "type": "level2",
+          "referenceId": "familyBased/fields_view_merged_documents"
+        }
+      ]
+    }
+  ]
+}

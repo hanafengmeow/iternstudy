@@ -1,0 +1,90 @@
+.form-content {
+  display: flex;
+  position: relative;
+  width: 100%;
+  font-size: var(--font-size-p2);
+  max-width: 1200px;
+}
+
+.form-content-form-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.form-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px 20px 40px;
+  background-color: var(--white-color);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--gray-color-4);
+}
+
+.xsmall .form-content-header,
+.small .form-content-header {
+  padding: 30px 20px;
+}
+
+.form-content-form {
+  height: calc(100% - 200px); /* Adjust according to your layout */
+  padding: 20px 40px;
+  background-color: var(--white-color);
+  border-radius: 0 0 10px 10px;
+  overflow-y: auto;
+}
+
+.xsmall .form-content-form,
+.small .form-content-form {
+  padding: 20px;
+}
+
+.form-content-form > div {
+  margin-bottom: 40px;
+}
+
+.form-content-controls-container {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+}
+
+.form-content-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: var(--white-color);
+  border-top: 1px solid var(--gray-color-4);
+}
+
+.xsmall .form-content-controls,
+.small .form-content-controls {
+  padding: 20px 10px;
+}
+
+.form-content-controls button {
+  min-width: 100px;
+}
+
+.email-modal {
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rem;
+}
+
+.email-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-input {
+  margin-bottom: 20px;
+}
+
+.email-send-button {
+  width: 100px;
+}

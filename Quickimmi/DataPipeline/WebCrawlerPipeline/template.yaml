@@ -1,0 +1,439 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  # WebCrawlerInitLambda resources
+  UnvisitedUrlQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 60
+      MessageRetentionPeriod: 345600
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt WebCrawlerWorkerDLQ.Arn
+        maxReceiveCount: 5
+  WebCrawlerInitLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: WebCrawlerInitLambda
+      CodeUri: src/WebCrawlerInitLambda
+      Handler: handler.Handler::handleRequest
+      Runtime: java8
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Environment:
+        Variables:
+          ROOTURLS_BUCKET_NAME: !Ref RootUrls
+          ROOTURLS_BUCKET_ARN: !GetAtt RootUrls.Arn
+          UNVISITEDURL_QUEUE_NAME: !GetAtt UnvisitedUrlQueue.QueueName
+          UNVISITEDURL_QUEUE_ARN: !GetAtt UnvisitedUrlQueue.Arn
+          UNVISITEDURL_QUEUE_URL: !Ref UnvisitedUrlQueue
+          WEBCRAWLERTASK_TABLE_NAME: !Ref WebCrawlerTaskTable
+          WEBCRAWLERTASK_TABLE_ARN: !GetAtt WebCrawlerTaskTable.Arn
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${RootUrls}
+                - !Sub arn:${AWS::Partition}:s3:::${RootUrls}/*
+        - DynamoDBCrudPolicy:
+            TableName: !Ref WebCrawlerTaskTable
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt UnvisitedUrlQueue.QueueName
+  WebCrawlerInitLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Retain
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${WebCrawlerInitLambda}
+  RootUrls:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: root-urls-bucket
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  RootUrlsBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref RootUrls
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt RootUrls.Arn
+              - !Sub ${RootUrls.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+
+  WebCrawlerTaskTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: web_crawler_task
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+
+  # WebCrawlerWorkerLambda resources
+  WebCrawlerWorkerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: WebCrawlerWorkerLambda
+      CodeUri: src/WebCrawlerWorkerLambda
+      Handler: Handler::handleRequest
+      Runtime: java8
+      MemorySize: 3008
+      Timeout: 60
+      Tracing: Active
+      Events:
+        UnvisitedUrlQueue:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt UnvisitedUrlQueue.Arn
+            BatchSize: 1
+      Environment:
+        Variables:
+          WEBCRAWLERWORKER_BUCKET_NAME: !Ref WebCrawlerWorkerBucket
+          WEBCRAWLERWORKER_BUCKET_ARN: !GetAtt WebCrawlerWorkerBucket.Arn
+          UNVISITEDURL_QUEUE_NAME: !GetAtt UnvisitedUrlQueue.QueueName
+          UNVISITEDURL_QUEUE_ARN: !GetAtt UnvisitedUrlQueue.Arn
+          UNVISITEDURL_QUEUE_URL: !Ref UnvisitedUrlQueue
+          PAGECRAWLINGTASK_TABLE_NAME: !Ref PageCrawlingTaskTable
+          PAGECRAWLINGTASK_TABLE_ARN: !GetAtt PageCrawlingTaskTable.Arn
+          FINISHEDURL_QUEUE_NAME: !GetAtt FinishedUrlQueue.QueueName
+          FINISHEDURL_QUEUE_NAME_ARN: !GetAtt FinishedUrlQueue.Arn
+          FINISHEDURL_QUEUE_URL: !Ref FinishedUrlQueue
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PageCrawlingTaskTable
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerWorkerBucket}
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerWorkerBucket}/*
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt UnvisitedUrlQueue.QueueName
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt FinishedUrlQueue.QueueName
+  WebCrawlerWorkerLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Retain
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${WebCrawlerWorkerLambda}
+
+  WebCrawlerWorkerDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+  WebCrawlerWorkerBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: web-crawler-worker-bucket
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  WebCrawlerWorkerBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebCrawlerWorkerBucket
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt WebCrawlerWorkerBucket.Arn
+              - !Sub ${WebCrawlerWorkerBucket.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  PageCrawlingTaskTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: page_crawling_task
+      AttributeDefinitions:
+        - AttributeName: urlId
+          AttributeType: S
+        - AttributeName: taskId
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: taskId
+          KeyType: HASH
+        - AttributeName: urlId
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+  FinishedUrlQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 1000
+      MessageRetentionPeriod: 345600
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt WebCrawlerTransformerDLQ.Arn
+        maxReceiveCount: 5
+
+  # define WebCrawlerTransformerLambda resources
+  WebCrawlerTransformerDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 345600
+
+  WebCrawlerTransformerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Function ${ResourceName}
+        - ResourceName: WebCrawlerTransformerLambda
+      CodeUri: src/WebCrawlerTransformerLambda
+      Handler: handler.handle_request
+      Runtime: python3.9
+      MemorySize: 3008
+      Timeout: 900
+      Tracing: Active
+      Events:
+        WebCrawlerFinishQueue:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt FinishedUrlQueue.Arn
+            BatchSize: 1
+      Environment:
+        Variables:
+          PAGECRAWLINGTASK_TABLE_NAME: !Ref PageCrawlingTaskTable
+          PAGECRAWLINGTASK_TABLE_ARN: !GetAtt PageCrawlingTaskTable.Arn
+          WEBCRAWLERWORKER_BUCKET_NAME: !Ref WebCrawlerWorkerBucket
+          WEBCRAWLERWORKER_BUCKET_ARN: !GetAtt WebCrawlerWorkerBucket.Arn
+          PAGETRANSFORMTASK_TABLE_NAME: !Ref PageTransformTaskTable
+          PAGETRANSFORMTASK_TABLE_ARN: !GetAtt PageTransformTaskTable.Arn
+          WEBCRAWLERTRANSFORMER_BUCKET_NAME: !Ref WebCrawlerTransformerBucket
+          WEBCRAWLERTRANSFORMER_BUCKET_ARN: !GetAtt WebCrawlerTransformerBucket.Arn
+          URLTOPAGEFIGERPRINT_TABLE_NAME: !Ref UrlToPageFigerprintTable
+          URLTOPAGEFIGERPRINT_TABLE_ARN: !GetAtt UrlToPageFigerprintTable.Arn
+          DOCUMENT_TABLE_NAME: !Ref DocumentTable
+          DOCUMENT_TABLE_ARN: !GetAtt DocumentTable.Arn
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerWorkerBucket}
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerWorkerBucket}/*
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PageCrawlingTaskTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PageTransformTaskTable
+        - Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectAcl
+                - s3:GetObjectLegalHold
+                - s3:GetObjectRetention
+                - s3:GetObjectTorrent
+                - s3:GetObjectVersion
+                - s3:GetObjectVersionAcl
+                - s3:GetObjectVersionForReplication
+                - s3:GetObjectVersionTorrent
+                - s3:ListBucket
+                - s3:ListBucketMultipartUploads
+                - s3:ListBucketVersions
+                - s3:ListMultipartUploadParts
+                - s3:AbortMultipartUpload
+                - s3:DeleteObject
+                - s3:DeleteObjectVersion
+                - s3:PutObject
+                - s3:PutObjectLegalHold
+                - s3:PutObjectRetention
+                - s3:RestoreObject
+              Resource:
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerTransformerBucket}
+                - !Sub arn:${AWS::Partition}:s3:::${WebCrawlerTransformerBucket}/*
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UrlToPageFigerprintTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref DocumentTable
+  WebCrawlerTransformerLambdaLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Retain
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${WebCrawlerTransformerLambda}
+
+  PageTransformTaskTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: page_transform_task
+      AttributeDefinitions:
+        - AttributeName: taskId
+          AttributeType: S
+        - AttributeName: pageFingerprint
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: taskId
+          KeyType: HASH
+        - AttributeName: pageFingerprint
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+  WebCrawlerTransformerBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: web-crawler-transformer-bucket
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  WebCrawlerTransformerBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebCrawlerTransformerBucket
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt WebCrawlerTransformerBucket.Arn
+              - !Sub ${WebCrawlerTransformerBucket.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  DocumentTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: document
+      AttributeDefinitions:
+        - AttributeName: source
+          AttributeType: S
+        - AttributeName: pageFingerprint
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: source
+          KeyType: HASH
+        - AttributeName: pageFingerprint
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+  UrlToPageFigerprintTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: url_to_page_fingerprint
+      AttributeDefinitions:
+        - AttributeName: source
+          AttributeType: S
+        - AttributeName: link
+          AttributeType: S
+        - AttributeName: pageFingerprint
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: source
+          KeyType: HASH
+        - AttributeName: link
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      LocalSecondaryIndexes:
+        - IndexName: SourceFingerprintLSI
+          KeySchema:
+            - AttributeName: source
+              KeyType: HASH
+            - AttributeName: pageFingerprint
+              KeyType: RANGE
+          Projection:
+            ProjectionType: INCLUDE
+            NonKeyAttributes:
+              - source
+              - link

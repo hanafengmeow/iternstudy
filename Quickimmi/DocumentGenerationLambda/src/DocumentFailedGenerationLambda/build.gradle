@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+}
+
+group 'com.quick.immi'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation 'org.slf4j:slf4j-reload4j:2.0.9'
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    //latest 1.4 is defect
+    implementation 'com.github.crawler-commons:crawler-commons:1.3'
+    implementation 'org.jsoup:jsoup:1.16.1'
+    implementation 'com.amazonaws:aws-java-sdk-sqs:1.12.565'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.12.565'
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.3'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.11.3'
+    implementation 'com.google.code.gson:gson:2.10'
+    implementation("org.apache.pdfbox:pdfbox:2.0.1")
+    implementation("org.bouncycastle:bcprov-jdk18on:1.77")
+    implementation("com.zaxxer:HikariCP:4.0.3")
+
+    implementation("org.mybatis:mybatis:3.2.2")
+
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'com.amazonaws.secretsmanager:aws-secretsmanager-jdbc:1.0.12'
+    implementation 'com.amazonaws:aws-java-sdk-rds:1.12.429' // AWS SDK for Amazon RDS (for Aurora MySQL)
+    implementation 'software.amazon.awssdk:secretsmanager:2.24.5'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+
+    // Mockito for mocking in tests
+    testImplementation 'org.mockito:mockito-core:3.+'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.+'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs "resources/"
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
+}

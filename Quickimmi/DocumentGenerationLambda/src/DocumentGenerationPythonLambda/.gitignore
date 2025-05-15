@@ -1,0 +1,30 @@
+#Environment Configuration Files
+.env
+
+# Byte-compile / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+venv-dev/
+.venv-quickimmi/
+venv-quickimmi/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+Notebook/
+
+# Vscode
+.vscode/
+
+# Output
+output/

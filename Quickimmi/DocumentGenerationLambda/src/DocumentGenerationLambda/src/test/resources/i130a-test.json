@@ -1,0 +1,314 @@
+{
+    "attorney": {
+        "g28AttachedCheckbox": "1",
+        "volagNumber": "101010",
+        "stateBarNumber": "20202",
+        "uSCISOnlineAccountNumber": "6789412345000"
+    },
+    "beneficiary": {
+        "alienNumber": "A123456789",
+        "uSCISOnlineAccountNumber": "87654321000",
+        "lastName": "Doe",
+        "firstName": "John",
+        "middleName": "A",
+        "addressHistories": [
+            {
+                "streetNumberAndName": "789 Maple Ave",
+                "aptCheckbox": " APT ",
+                "steCheckbox": " STE ",
+                "flrCheckbox": " FLR ",
+                "aptSteFlrNumber": "4F",
+                "cityOrTown": "Chicago",
+                "state": "IL",
+                "zipCode": "60601",
+                "province": "IL",
+                "postalCode": "60601",
+                "country": "USA",
+                "dateFrom": "2017-01-01",
+                "dateTo": "2019-12-31"
+            },
+            {
+            "streetNumberAndName": "101 Pine St",
+            "aptCheckbox": " APT ",
+            "steCheckbox": " STE ",
+            "flrCheckbox": " FLR ",
+            "aptSteFlrNumber": "Apt 5B",
+            "cityOrTown": "Houston",
+            "state": "TX",
+            "zipCode": "77001",
+            "province": "TX",
+            "postalCode": "77001",
+            "country": "USA",
+            "dateFrom": "2015-01-01",
+            "dateTo": "2016-12-31"
+            }
+        ],
+        "outsideUsAddress" : {
+            "streetNumberAndName": "outsideUsAddress 101 Pine St",
+            "aptCheckbox": " APT ",
+            "steCheckbox": " STE ",
+            "flrCheckbox": " FLR ",
+            "aptSteFlrNumber": "Apt 5B",
+            "cityOrTown": "Houston",
+            "state": "TX",
+            "zipCode": "77001",
+            "province": "TX",
+            "postalCode": "77001",
+            "country": "USA",
+            "dateFrom": "2015-01-01",
+            "dateTo": "2016-12-31"
+        },
+        "parent1": {
+                "lastName": "Doe",
+                "firstName": "Richard",
+                "middleName": "C",
+                "dateOfBirth": "1948-05-15",
+                "sexOfMaleCheckbox": "Y",
+                "sexOfFemaleCheckbox": "Y",
+                "cityOfBirth": "father cityOfBirth",
+                "countryOfBirth": "father countryOfBirth",
+                "currentCityOfResidence": "father cityOfResidence",
+                "currentCountryOfResidence": "father countryOfResidence"
+            },
+        "parent2": {
+                "lastName": "Doe",
+                "firstName": "Jane",
+                "middleName": "B",
+                "dateOfBirth": "1950-01-01",
+                "sexOfMaleCheckbox": "Y",
+                "sexOfFemaleCheckbox": "Y",
+                "cityOfBirth": "Boston",
+                "countryOfBirth": "USA",
+                "currentCityOfResidence": "New York",
+                "currentCountryOfResidence": "USA"
+            },
+        "employmentHistories": [
+            {
+                "nameOfEmployer": "LMN Ltd",
+                "streetNumberAndName": "234 Broadway",
+                "aptCheckbox": "APT",
+                "steCheckbox": "STE",
+                "flrCheckbox": "FLR",
+                "aptSteFlrNumber": "Suite 500",
+                "city": "San Francisco",
+                "state": "CA",
+                "zipCode": "94101",
+                "province": "CA",
+                "postalCode": "94101",
+                "country": "USA",
+                "occupation": "Data Analyst",
+                "dateFrom": "2013-01-01",
+                "dateTo": "2014-12-31"
+            },
+            {
+                "nameOfEmployer": "OPQ LLC",
+                "streetNumberAndName": "567 Market St",
+                "aptCheckbox": "APT",
+                "steCheckbox": "STE",
+                "flrCheckbox": "FLR",
+                "aptSteFlrNumber": "Floor 6",
+                "city": "Miami",
+                "state": "FL",
+                "zipCode": "33101",
+                "province": "FL",
+                "postalCode": "33101",
+                "country": "USA",
+                "occupation": "Marketing Specialist",
+                "dateFrom": "2011-05-01",
+                "dateTo": "2012-12-31"
+            }
+        ],
+        "mostRecentOutSideUsEmploymentHistory5YearsAgo": {
+            "nameOfEmployer": "OPQ LLC",
+            "streetNumberAndName": "567 Market St",
+            "aptCheckbox": "APT",
+            "steCheckbox": "STE",
+            "flrCheckbox": "FLR",
+            "aptSteFlrNumber": "Floor 6",
+            "city": "Miami",
+            "state": "FL",
+            "zipCode": "33101",
+            "province": "FL",
+            "postalCode": "33101",
+            "country": "USA",
+            "occupation": "Marketing Specialist",
+            "dateFrom": "2011-05-01",
+            "dateTo": "2012-12-31"
+        }
+    },
+    "petitionerStatement": {
+        "canReadAndUnderstandEnglishCheckbox": "C",
+        "interpreterReadAndTranslatedCheckbox": "B",
+        "interpreterReadAndTranslatedNumber": "1",
+        "preparerAssistanceCheckbox": "A",
+        "preparerAssistanceNumber": "2",
+        "daytimeTelephoneNumber": "1234567890",
+        "mobileTelephoneNumber": "0987654321",
+        "emailAddress": "email@example.com",
+        "signature": "John Doe",
+        "dateOfSignature": "2024-09-02"
+    },
+    "interpreter": {
+        "lastName": "Smith",
+        "firstName": "Anna",
+        "businessName": "Translation Services Inc.",
+        "streetNumberAndName": "789 Interpreter Ln",
+        "aptCheckbox": "APT",
+        "steCheckbox": "STE",
+        "flrCheckbox": "FLR",
+        "aptSteFlrNumber": "Suite 101",
+        "city": "Seattle",
+        "state": "WA",
+        "zipCode": "98101",
+        "province": "WA",
+        "postalCode": "98101",
+        "country": "USA",
+        "daytimeTelephoneNumber": "5551234567",
+        "mobileTelephoneNumber": "5559876543",
+        "emailAddress": "interpreter@example.com",
+        "fluentInEnglish": "Y",
+        "signature": "Anna Smith",
+        "dateOfSignature": "2024-09-01"
+    },
+    "preparer": {
+        "lastName": "Johnson",
+        "firstName": "Robert",
+        "businessName": "Legal Prep Co.",
+        "streetNumberAndName": "123 Prep St",
+        "aptCheckbox": "APT",
+        "steCheckbox": "STE",
+        "flrCheckbox": "FLR",
+        "aptSteFlrNumber": "Suite 202",
+        "city": "Denver",
+        "state": "CO",
+        "zipCode": "80201",
+        "province": "CO",
+        "postalCode": "80201",
+        "country": "USA",
+        "daytimeTelephoneNumber": "3031234567",
+        "mobileTelephoneNumber": "3039876543",
+        "emailAddress": "prep@example.com",
+        "nonAttorneyPreparerCheckbox": "A",
+        "attorneyPreparerCheckbox": "B",
+        "attorneyExtendsCheckbox": "Y",
+        "attorneyNotExtendCheckbox": "N",
+        "signature": "Robert Johnson",
+        "dateOfSignature": "2024-08-31"
+    },
+    "supplements":[ 
+        {
+            "lastName": "lastName1",
+            "firstName": "firstName1",
+            "middleName": "middleName1",
+            "alienNumber": "alienNumber1",
+            "additionalRecords": [
+                {
+                    "pageNumber": "pageNumber1",
+                    "partNumber": "partNumber1",
+                    "itemNumber": "itemNumber1",
+                    "additionalInfo": "Additional Info 1"
+                },
+                {
+                    "pageNumber": "pageNumber2",
+                    "partNumber": "partNumber2",
+                    "itemNumber": "itemNumber2",
+                    "additionalInfo": "Additional Info 2"
+                },
+                {
+                    "pageNumber": "pageNumber3",
+                    "partNumber": "partNumber3",
+                    "itemNumber": "itemNumber3",
+                    "additionalInfo": "Additional Info 3"
+                },
+                {
+                    "pageNumber": "pageNumber4",
+                    "partNumber": "partNumber4",
+                    "itemNumber": "itemNumber4",
+                    "additionalInfo": "Additional Info 4"
+                },
+                {
+                    "pageNumber": "pageNumber5",
+                    "partNumber": "partNumber5",
+                    "itemNumber": "itemNumber5",
+                    "additionalInfo": "Additional Info 5"
+                }
+            ]
+        },
+        {
+            "lastName": "lastName2",
+            "firstName": "firstName2",
+            "middleName": "middleName2",
+            "alienNumber": "alienNumber2",
+            "additionalRecords": [
+                {
+                    "pageNumber": "pageNumber1",
+                    "partNumber": "partNumber1",
+                    "itemNumber": "itemNumber1",
+                    "additionalInfo": "Additional Info 1"
+                },
+                {
+                    "pageNumber": "pageNumber2",
+                    "partNumber": "partNumber2",
+                    "itemNumber": "itemNumber2",
+                    "additionalInfo": "Additional Info 2"
+                },
+                {
+                    "pageNumber": "pageNumber3",
+                    "partNumber": "partNumber3",
+                    "itemNumber": "itemNumber3",
+                    "additionalInfo": "Additional Info 3"
+                },
+                {
+                    "pageNumber": "pageNumber4",
+                    "partNumber": "partNumber4",
+                    "itemNumber": "itemNumber4",
+                    "additionalInfo": "Additional Info 4"
+                },
+                {
+                    "pageNumber": "pageNumber5",
+                    "partNumber": "partNumber5",
+                    "itemNumber": "itemNumber5",
+                    "additionalInfo": "Additional Info 5"
+                }
+            ]
+        },
+        {
+            "lastName": "lastName3",
+            "firstName": "firstName3",
+            "middleName": "middleName3",
+            "alienNumber": "alienNumber3",
+            "additionalRecords": [
+                {
+                    "pageNumber": "pageNumber1",
+                    "partNumber": "partNumber1",
+                    "itemNumber": "itemNumber1",
+                    "additionalInfo": "Additional Info 1"
+                },
+                {
+                    "pageNumber": "pageNumber2",
+                    "partNumber": "partNumber2",
+                    "itemNumber": "itemNumber2",
+                    "additionalInfo": "Additional Info 2"
+                },
+                {
+                    "pageNumber": "pageNumber3",
+                    "partNumber": "partNumber3",
+                    "itemNumber": "itemNumber3",
+                    "additionalInfo": "Additional Info 3"
+                },
+                {
+                    "pageNumber": "pageNumber4",
+                    "partNumber": "partNumber4",
+                    "itemNumber": "itemNumber4",
+                    "additionalInfo": "Additional Info 4"
+                },
+                {
+                    "pageNumber": "pageNumber5",
+                    "partNumber": "partNumber5",
+                    "itemNumber": "itemNumber5",
+                    "additionalInfo": "Additional Info 5"
+                }
+            ]
+        }
+    ]
+}

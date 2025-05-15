@@ -1,0 +1,136 @@
+.form-input-container {
+  position: relative;
+}
+
+.input-form {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.input-required-mark {
+  position: absolute;
+  color: var(--danger-color);
+  top: 0;
+  right: -10px;
+}
+
+.site-form-item-icon {
+  color: rgba(0, 0, 0, 0.25);
+  margin-right: 5px;
+}
+
+.form-input-container .error-message {
+  position: absolute;
+  top: 38px;
+}
+
+.text-box-container {
+  position: relative;
+}
+
+.text-box {
+  max-width: 250px;
+  width: 100%;
+}
+
+.inline-placeholder {
+  position: absolute;
+  background: white;
+  top: -4px;
+  line-height: 1;
+  padding-left: 2px;
+  padding-right: 2px;
+  left: 10px;
+}
+
+.dropdown-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.dropdown-inner {
+  width: 100%;
+}
+
+.dropdown-inner-uploader {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.datepicker-container {
+  position: relative;
+  max-width: 250px;
+  width: 100%;
+}
+
+.datepicker-container .ant-picker {
+  width: 100%;
+}
+
+.monthyearpicker-container {
+  position: relative;
+  max-width: 250px;
+  width: 100%;
+}
+
+.monthyearpicker-container .ant-picker {
+  width: 100%;
+}
+
+.select-box {
+  max-width: 250px;
+  width: 100%;
+  position: relative;
+}
+
+.select-box .ant-select {
+  width: 100%;
+}
+
+.select-box .ant-select .ant-select-selector {
+  border-radius: 4px !important;
+}
+
+.checkbox-multi-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* .datepicker-alternative {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.datepicker-alternative-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+
+.field-view-container {
+  display: flex;
+  gap: 10px;
+}
+
+.monthyearpicker-with-option {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.monthyearpicker-with-option-picker {
+  display: flex;
+  gap: 10px;
+}
+
+.apt-ste-flr-checkbox {
+  max-width: 250px;
+  width: 100%;
+}

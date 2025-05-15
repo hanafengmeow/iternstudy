@@ -1,0 +1,45 @@
+version: 0.2
+env:
+  shell: 'bash'
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - echo $AWS_REGION
+      - echo $CONTAINER_NAME
+      - AWS_ACCOUNT_ID=$(echo $CODEBUILD_BUILD_ARN | cut -f5 -d ':')
+      - echo "Running - aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+      - aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - echo $COMMIT_HASH
+      - IMAGE_TAG=${COMMIT_HASH}-latest
+      - echo "IMAGE_TAG = ${IMAGE_TAG}"
+      - REPOSITORY_NAME=ecrstack-quickimmiwebserverrepo
+      - echo "REPOSITORY_NAME = ${REPOSITORY_NAME}"
+      - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPOSITORY_NAME}
+      - echo "REPOSITORY_URI = ${REPOSITORY_URI}"
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Build Docker image
+      - echo Running "docker build -f ${CODEBUILD_SRC_DIR}/Dockerfile --platform="linux/arm64" -t ${REPOSITORY_URI}:latest ."
+      - docker build --platform="linux/arm64" -f ${CODEBUILD_SRC_DIR}/Dockerfile -t ${REPOSITORY_URI}:latest .
+      - echo Running "docker tag ${REPOSITORY_URI}:latest ${REPOSITORY_URI}:${IMAGE_TAG}"
+      - docker tag ${REPOSITORY_URI}:latest ${REPOSITORY_URI}:${IMAGE_TAG}
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push ${REPOSITORY_URI}:${IMAGE_TAG}
+      - docker push ${REPOSITORY_URI}:latest
+      - printf '[{"name":"web-server","imageUri":"%s"}]' ${REPOSITORY_URI}:latest > imagedefinitions.json
+      - cat imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
+
+cache:
+  paths:
+    - '/root/.gradle/caches/**/*'
+    - '/root/.gradle/wrapper/**/*'

@@ -1,0 +1,94 @@
+.case-card-container {
+  display: block;
+  max-width: 450px;
+  position: relative;
+}
+
+.case-card-status {
+  text-align: center;
+  margin: 0;
+  margin-left: auto;
+  padding: 3px 5px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: var(--primary-color-trans1);
+}
+
+.case-card-content {
+  padding: 0 25px 25px 30px;
+  margin-top: -5px;
+}
+.case-card-bottom {
+  border-top: 1px solid var(--gray-color-3);
+  padding: 13px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.case-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 30px;
+}
+
+.xsmall .case-card-title {
+  flex-direction: column;
+}
+
+.case-card-name {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.case-card-caseName {
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.case-card-name-input {
+  /* height: 35px; */
+  width: 250px;
+}
+.case-card-name-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-card-progress {
+  width: 170px;
+  position: relative;
+  background-color: var(--gray-color-4);
+  padding: 2px 4px;
+  border: 1px solid var(--gray-color-3);
+  border-radius: 5px;
+  justify-self: center;
+}
+
+.case-card-progress-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color-trans1);
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}
+
+.case-card-progress-text {
+  position: relative;
+  z-index: 1;
+}
+
+.case-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 60px;
+}
+
+.case-delete-modal {
+  margin-top: 12px;
+}

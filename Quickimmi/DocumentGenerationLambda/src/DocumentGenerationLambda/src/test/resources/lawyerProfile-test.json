@@ -1,0 +1,40 @@
+{
+    "basicInfo": {
+      "uscisOnlineAccountNumber": "987654321",
+      "lastName": "Smith",
+      "firstName": "Jane",
+      "middleName": "B",
+      "streetNumberAndName": "123 Main St",
+      "aptCheckbox": true,
+      "steCheckbox": true,
+      "flrCheckbox": true,
+      "aptSteFlrNumber": "5A",
+      "city": "New York",
+      "stateDropdown": "NY",
+      "zipCode": "10001",
+      "province": "NY",
+      "postalCode": "10001",
+      "country": "USA",
+      "daytimeTelephoneNumber": "555-123-4567",
+      "mobileTelephoneNumber": "555-987-6543",
+      "emailAddress": "jane.smith@example.com",
+      "faxNumber": "555-876-5432",
+      "eoirNumber": "E123456789"
+    },
+    "eligibility": {
+      "eligibleAttorneyCheckbox": true,
+      "licensingAuthority": "New York State Bar",
+      "barNumber": "NY12345",
+      "amNotCheckbox": "false",
+      "amCheckbox": true,
+      "nameofLawFirm": "Smith & Associates",
+      "accreditedRepresentativeCheckbox": true,
+      "nameofRecognizedOrganization": "Legal Aid Society",
+      "dateofAccreditation": "2020-05-15",
+      "associateCheckbox": "true",
+      "nameofPreviousRepresentative": "John Doe",
+      "lawGraduateCheckbox": "false",
+      "nameofLawStudentOrLawGraduate": "N/A"
+
+  }
+}

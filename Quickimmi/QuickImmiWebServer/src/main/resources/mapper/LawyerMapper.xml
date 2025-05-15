@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quick.immi.ai.dao.LawyerMapper">
+
+    <insert id="create" parameterType="com.quick.immi.ai.entity.Lawyer">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into lawyer_table (`username`,  `email`, `phone_number`, `cognito_username`, `created_at`) values(#{username}, #{email}, #{phoneNumber}, #{cognitoUsername}, #{createdAt});
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from lawyer_table where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="java.lang.Integer" resultType="com.quick.immi.ai.entity.Lawyer">
+        SELECT * FROM lawyer_table WHERE id = #{id}
+    </select>
+
+    <select id="getAvailableLawyer" resultType="com.quick.immi.ai.entity.Lawyer">
+        SELECT *
+        FROM lawyer_table
+        WHERE max_capacity > occupied_capability
+        ORDER BY priority DESC
+    </select>
+
+    <select id="getByCName" resultType="com.quick.immi.ai.entity.Lawyer">
+        SELECT * FROM lawyer_table WHERE cognito_username = #{cognitoUsername}
+    </select>
+
+    <select id="getByUsername" resultType="com.quick.immi.ai.entity.Lawyer">
+        SELECT * FROM lawyer_table WHERE username = #{username}
+    </select>
+
+    <update id="update" parameterType="com.quick.immi.ai.entity.Lawyer">
+        update lawyer_table
+        <set>
+            <if test="firstName != null">
+                first_name = #{firstName},
+            </if>
+            <if test="lastName != null">
+                last_name = #{lastName},
+            </if>
+            <if test="middleName != null">
+                middle_name = #{middleName},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="phoneNumber != null">
+                phone_number = #{phoneNumber},
+            </if>
+            <if test="specialization != null">
+                specialization = #{specialization},
+            </if>
+            <if test="lawFirm != null">
+                law_firm = #{lawFirm},
+            </if>
+            <if test="profile != null">
+                profile = #{profile},
+            </if>
+            <if test="experienceYears != null">
+                experience_years = #{experienceYears},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="priority != null">
+                priority = #{priority},
+            </if>
+            <if test="maxCapacity != null">
+                max_capacity = #{maxCapacity},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+</mapper>

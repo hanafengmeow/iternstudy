@@ -1,0 +1,407 @@
+{
+  "attorney": {
+    "g28AttachedCheckbox": "Y",
+    "stateBarNumber": "987654321",
+    "uSCISOnlineAccountNumber": "1234567890"
+  },
+  "petitioner": {
+    "lastName": "Smith",
+    "firstName": "John",
+    "middleName": "A",
+    "companyName": "TechCorp LLC",
+    "uSCISOnlineAccountNumber": "1234567890",
+    "employerIdentificationNumber": "987654321",
+    "ssn": "123-45-6789",
+    "mailAddress": {
+      "inCareOfName": "John Smith",
+      "streetNumberAndName": "1234 Elm St",
+      "aptSteFlrNumber": "5A",
+      "city": "San Francisco",
+      "postalCode": "94107",
+      "country": "USA",
+      "state": "CA",
+      "zipCode": "94107",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "province": "CA"
+    },
+    "nonprofitCheckboxYes": "Y",
+    "nonprofitCheckboxNo": "N",
+    "employFewerThan25CheckboxYes": "Y",
+    "employFewerThan25CheckboxNo": "N"
+  },
+
+  "petitionType": {
+    "petitionType1a": "a",
+    "petitionType1b": "b",
+    "petitionType1c": "c",
+    "petitionType1d": "d",
+    "petitionType1e": "e",
+    "petitionType1f": "f",
+    "petitionType1g": "g",
+    "petitionType1h": "h",
+    "petitionType2a": "A",
+    "petitionType2b": "S",
+    "receiptNumber": "142"
+  },
+
+  "beneficiary": {
+    "lastName": "Doe",
+    "firstName": "Jane",
+    "middleName": "B",
+    "mailAddress": {
+      "inCareOfName": "Jane Doe",
+      "streetNumberAndName": "5678 Oak St",
+      "aptSteFlrNumber": "3B",
+      "city": "Los Angeles",
+      "postalCode": "90001",
+      "country": "USA",
+      "state": "CA",
+      "zipCode": "90001",
+      "aptCheckbox": " APT ",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "province": "CA"
+    },
+    "dateOfBirth": "1990-01-01",
+    "cityOfBirth": "New York",
+    "stateOrProvinceOfBirth": "NY",
+    "countryOfBirth": "USA",
+    "countryOfCitizenship": "USA",
+    "alienRegistrationNumber": "A123456789",
+    "ssn": "123-45-6789",
+    "dateOfLastArrival": "2023-01-01",
+    "formI94Number": "I-1234567890",
+    "passportNumber": "987654321",
+    "travelDocumentNumber": "TR123456",
+    "countryOfIssuance": "USA",
+    "expirationDateForPassport": "2030-01-01",
+    "expirationOfStay": "2025-01-01",
+    "statusOnFormI94": "H1B"
+  },
+
+  "processingInfo": {
+    "applyForVisaAbroadCheckbox": "1a",
+    "cityOrTown": "New York",
+    "country": "USA",
+    "applyForAdjustmentOfStatusCheckbox": "1b",
+    "petitionType": {
+      "petitionType1g": "Y",
+      "petitionType1h": "Y",
+      "petitionType1f": "N"
+    },
+    "currentCountryOfResidence": "USA",
+    "foreignAddress": {
+      "streetNumberAndName": "1234 Maple St",
+      "aptSteFlrNumber": "3B",
+      "city": "London",
+      "province": "England",
+      "country": "UK",
+      "postalCode": "SW1A 1AA",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "aptCheckbox": " APT "
+    },
+    "middleNameInNativeAlphabet": "M",
+    "firstNameInNativeAlphabet": "John",
+    "lastNameInNativeAlphabet": "Doe",
+    "mailAddress": {
+      "streetNumberAndName": "5678 Oak St",
+      "aptSteFlrNumber": "111",
+      "city": "San Francisco",
+      "postalCode": "94107",
+      "country": "USA",
+      "province": "CA",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "aptCheckbox": " APT ",
+      "inCareOfName": "Jane Doe"
+    },
+    "filingOtherPetitionsCheckboxYes": "Y",
+    "filingOtherPetitionsCheckboxNo": "N",
+    "formI485Checkbox": "Y",
+    "formI131Checkbox": "Y",
+    "formI765Checkbox": "Y",
+    "otherApplicationsCheckbox": "Y",
+    "removalProceedingsCheckboxYes": "Y",
+    "removalProceedingsCheckboxNo": "N",
+    "filingWithoutLaborCertificationCheckboxNo": "N",
+    "filingWithoutLaborCertificationCheckboxYes": "Y",
+    "requestForDuplicateLaborCertificationCheckboxNo": "N",
+    "requestForDuplicateLaborCertificationCheckboxYes": "Y",
+    "previousImmigrantVisaPetitionCheckboxYes": "Y",
+    "previousImmigrantVisaPetitionCheckboxNo": "N"
+  },
+  "additionalPetitionerInfo": {
+    "petitionerTypeEmployerCheckbox": "Y",
+    "petitionerTypeSelfCheckbox": "Y",
+    "petitionerTypeOtherCheckbox": "Y",
+    "petitionerTypeOther": "Lawful Permanent Resident",
+    "typeOfBusiness": "Software Development",
+    "dateEstablished": "01/01/2010",
+    "numberOfUSEmployees": "100",
+    "grossAnnualIncome": "5000000",
+    "netAnnualIncome": "4500000",
+    "naicsCode": "541511",
+    "laborCertificationDOLCaseNumber": "123456",
+    "laborCertificationFilingDate": "01/01/2022",
+    "laborCertificationExpirationDate": "01/01/2025",
+    "occupation": "Software Engineer",
+    "annualIncome": "120000"
+  },
+
+
+  "employmentInfo": {
+    "socCode1": "11",
+    "socCode2": "111",
+    "jobTitle": "Software Engineer",
+    "nonTechnicalJobDescription": "Develops and maintains software systems.",
+    "hoursPerWeek": "40",
+    "fullTimePositionCheckboxNo": "N",
+    "fullTimePositionCheckboxYes": "Y",
+    "newPositionCheckboxNo": "N",
+    "newPositionCheckboxYes": "Y",
+    "permanentPositionCheckboxNo": "N",
+    "permanentPositionCheckboxYes": "Y",
+    "wages": "80000",
+    "wageUnit": "year",
+    "workAddress": {
+      "streetNumberAndName": "123 Tech Road",
+      "aptSteFlrNumber": "Suite 200",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94107",
+      "steCheckbox": " STE ",
+      "flrCheckbox": " FLR ",
+      "aptCheckbox": " APT "
+    }
+  },
+
+  "familyMembers": [
+    {
+      "lastName": "Doe",
+      "firstName": "John",
+      "middleName": "A",
+      "dateOfBirth": "1990-01-01",
+      "countryOfBirth": "USA",
+      "relationship": "Spouse",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    },
+    {
+      "lastName": "Doe",
+      "firstName": "Jane",
+      "middleName": "B",
+      "dateOfBirth": "2010-05-12",
+      "countryOfBirth": "USA",
+      "relationship": "Child",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    },
+    {
+      "lastName": "Doe",
+      "firstName": "Jim",
+      "middleName": "C",
+      "dateOfBirth": "2012-08-20",
+      "countryOfBirth": "USA",
+      "relationship": "Child",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    },
+    {
+      "lastName": "Doe",
+      "firstName": "Alice",
+      "middleName": "D",
+      "dateOfBirth": "2014-02-10",
+      "countryOfBirth": "USA",
+      "relationship": "Child",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    },
+    {
+      "lastName": "Doe",
+      "firstName": "Bob",
+      "middleName": "E",
+      "dateOfBirth": "2016-09-15",
+      "countryOfBirth": "USA",
+      "relationship": "Child",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    },
+    {
+      "lastName": "Doe",
+      "firstName": "Charlie",
+      "middleName": "F",
+      "dateOfBirth": "2018-11-22",
+      "countryOfBirth": "USA",
+      "relationship": "Child",
+      "isApplyingForAdjustmentOfStatusYes": "Y",
+      "isApplyingForAdjustmentOfStatusNo": "N",
+      "isApplyingForVisaAboardYes": "Y",
+      "isApplyingForVisaAboardNo": "N"
+    }
+  ],
+
+  "contactInfo": {
+    "lastName": "Doe",
+    "firstName": "John",
+    "title": "CEO",
+    "daytimeTelephoneNumber": "123-456-7890",
+    "mobileTelephoneNumber": "098-765-4321",
+    "emailAddress": "johndoe@example.com",
+    "signature": "John Doe",
+    "dateOfSignature": "09/19/2024"
+  },
+
+  "interpreterInfo": {
+    "lastName": "Doe",
+    "firstName": "Jane",
+    "businessOrOrganizationName": "Language Services Co.",
+    "daytimeTelephoneNumber": "123-456-7890",
+    "mobileTelephoneNumber": "987-654-3210",
+    "emailAddress": "jane.doe@languageservices.com",
+    "interpreterFluentLanguage": "Spanish",
+    "signature": "Jane Doe",
+    "dateOfSignature": "2024-09-20"
+  },
+
+  "preparerInfo": {
+    "lastName": "Doe",
+    "firstName": "Jane",
+    "businessOrOrganizationName": "Immigration Services LLC",
+    "daytimeTelephoneNumber": "123-456-7890",
+    "mobileTelephoneNumber": "098-765-4321",
+    "emailAddress": "jane.doe@immigration.com",
+    "signature": "Jane Doe",
+    "dateOfSignature": "2024-09-19"
+  },
+
+  "supplement": [
+    {
+      "lastName": "Doe1",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+        {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    },
+    {
+      "lastName": "Doe2",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+        {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    },
+    {
+      "lastName": "Doe3",
+      "firstName": "John",
+      "middleName": "A",
+      "aNumber": "A123456789",
+      "information": [
+        {
+          "pageNumber": "1",
+          "partNumber": "2",
+          "itemNumber": "3",
+          "additionalInfo": "First additional information entry."
+        },
+        {
+          "pageNumber": "2",
+          "partNumber": "3",
+          "itemNumber": "4",
+          "additionalInfo": "Second additional information entry."
+        },
+        {
+          "pageNumber": "3",
+          "partNumber": "4",
+          "itemNumber": "5",
+          "additionalInfo": "Third additional information entry."
+        },
+        {
+          "pageNumber": "4",
+          "partNumber": "5",
+          "itemNumber": "6",
+          "additionalInfo": "Fourth additional information entry."
+        },
+        {
+          "pageNumber": "5",
+          "partNumber": "6",
+          "itemNumber": "7",
+          "additionalInfo": "Fifth additional information entry."
+        }
+      ]
+    }
+  ]
+
+}

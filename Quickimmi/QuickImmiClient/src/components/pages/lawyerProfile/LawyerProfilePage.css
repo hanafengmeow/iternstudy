@@ -1,0 +1,70 @@
+.lawyer-profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-color-4);
+  height: 100%;
+  padding: 20px 40px;
+  /* min-width: 1000px; */
+}
+
+.lawyer-profile-header {
+  /* max-width: 1390px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.lawyer-profile-content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  padding-bottom: 100px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.lawyer-profile-group {
+  padding-bottom: 20px;
+}
+.lawyer-profile-group.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* This disables interaction with the group */
+}
+
+.lawyer-profile-subTitle {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  align-items: center;
+}
+
+.lawyer-profile-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.lawyer-profile-display {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+.lawyer-profile-edit {
+  display: none;
+  flex-direction: column;
+}
+.lawyer-profile-edit.isEditing {
+  display: flex;
+  flex-direction: column;
+}
+.lawyer-profile-edit-input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 5px 0 15px;
+}
+.lawyer-profile-edit-save {
+  width: 80px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,109 @@
+{
+  "applyForWithholdingYes": "1",
+  "applicant": {
+    "aNumber": "A123456789",
+    "ssn": "987-65-4321",
+    "lastName": "Doe",
+    "firstName": "John",
+    "middleName": "A",
+    "birthDate": "1980-01-01",
+    "cityAndCountryOfBirth": "Example City, Example Country",
+    "nationality": "Example Nationality",
+    "uscisOnlineAccountNumber": "1234567890"
+  },
+  "spouse": {
+    "aNumber": "A987654321",
+    "birthDate": "1982-02-02"
+  },
+  "children": [
+    {
+      "aNumber": "C123456789",
+      "passportNumber": "P987654321",
+      "lastName": "Doe Jr.",
+      "firstName": "Johnny",
+      "birthDate": "2010-03-03",
+      "cityAndCountryOfBirth": "Child City, Child Country",
+      "nationality": "Child Nationality"
+    }
+  ],
+  "background": {
+    "addressHistoriesBeforeUS": [
+      {
+        "part": "Part A.III",
+        "question": "Q1",
+        "numberAndStreet": "123 Example Street",
+        "city": "Old City",
+        "province": "Old Province",
+        "country": "Old Country",
+        "startDate": "2000-01-01",
+        "endDate": "2005-12-31"
+      }
+    ],
+    "usAddressHistoriesPast5Years": [
+      {
+        "part": "Part A.III",
+        "question": "Q2",
+        "numberAndStreet": "456 New Street",
+        "city": "New City",
+        "province": "New Province",
+        "country": "New Country",
+        "startDate": "2015-01-01",
+        "endDate": "2020-12-31"
+      }
+    ],
+    "educationHistories": [
+      {
+        "part": "Part A.III",
+        "question": "Q3",
+        "schoolName": "Example School",
+        "schoolType": "High School",
+        "location": "School City, School Country",
+        "startDate": "1995-09-01",
+        "endDate": "1999-06-30"
+      }
+    ],
+    "employmentHistories": [
+      {
+        "part": "Part A.III",
+        "question": "Q4",
+        "nameAndAddress": "Example Employer, 789 Employment St, Employment City, Employment Country",
+        "occupation": "Example Occupation",
+        "startDate": "2006-01-01",
+        "endDate": "2010-12-31"
+      }
+    ],
+    "mother": {
+      "name": "Jane Doe",
+      "cityTownAndBirth": "Mother City, Mother Country",
+      "location": "Mother's Location"
+    },
+    "father": {
+      "name": "John Doe Sr.",
+      "cityTownAndBirth": "Father City, Father Country",
+      "location": "Father's Location"
+    },
+    "siblings": [
+      {
+        "name": "Sibling Name",
+        "cityTownAndBirth": "Sibling City, Sibling Country",
+        "location": "Sibling's Location"
+      }
+    ]
+  },
+  "applicationDetails": {
+    "asylumBasedOnRaceCheckbox": "Y"
+  },
+  "signature": {
+    "name": "John Doe",
+    "date": "2024-01-01"
+  },
+  "declaration": {
+    "preparerSignature": "Preparer Name",
+    "completeName": "John Doe",
+    "teleNumberAreacode": "123",
+    "teleNumber": "4567890",
+    "streetNumberAndName": "789 Declaration St"
+  },
+  "supplementAs": [],
+  "supplementBs": []
+}

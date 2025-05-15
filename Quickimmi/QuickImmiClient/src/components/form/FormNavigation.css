@@ -1,0 +1,78 @@
+.form-navigation {
+  flex: 0 0 250px;
+  overflow-y: auto;
+}
+
+.form-navigation-return {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--gray-color-4);
+  color: var(--primary-color);
+  gap: 10px;
+}
+
+.form-navigation-collapse {
+  border-radius: 10px;
+  background-color: var(--white-color);
+}
+
+.form-navigation .ant-collapse-header {
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--gray-color-4) !important;
+}
+
+.form-navigation .ant-collapse-content-box {
+  padding: 0 !important;
+}
+
+.form-navigation-l2 {
+  padding: 16px 20px 16px 40px;
+  border-bottom: 1px solid var(--gray-color-4);
+  color: var(--gray-color-7);
+  cursor: pointer;
+  border-radius: 0;
+  position: relative;
+}
+
+.form-navigation-l2.active {
+  color: var(--gray-color-1);
+  font-weight: 600;
+  border-right: 3px solid var(--primary-color);
+}
+
+.standalone.form-navigation-l2 {
+  font-weight: 600;
+  padding: 16px 24px 16px 16px;
+  border: none;
+}
+
+.standalone.form-navigation-l2.active {
+  border-right: none;
+}
+
+.nav-l1-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-l1-label svg {
+  fill: var(--primary-color);
+  font-size: large;
+  width: 48px;
+}
+
+.nav-l1-label .qtag {
+  width: 30px;
+  color: var(--gray-color-1);
+}
+
+.nav-exclamation-icon {
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  font-size: 20px;
+  color: var(--warning-color);
+}

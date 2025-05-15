@@ -1,0 +1,20 @@
+.App {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.appview {
+  display: flex;
+  height: 100%;
+}
+
+.cn {
+  font-family: "PingFang SC", sans-serif;
+}
+
+.en {
+  font-family: "Roboto", sans-serif;
+}

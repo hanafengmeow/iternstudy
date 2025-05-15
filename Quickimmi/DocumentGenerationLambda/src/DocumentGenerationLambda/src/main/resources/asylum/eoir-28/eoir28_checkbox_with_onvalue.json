@@ -1,0 +1,10 @@
+{
+    "EntryOfAppearanceCB":"[All, Custody/Bond, Non-Custody/Bond]",
+    "Attorney_CB":"[Authorized to Practice Dec 23 1952, Reputable Individual, Representative, Accredited Foreign Government Official, Attorney, Law Student/Graduate]",
+    "AttorneyAppearance_CB":"[0, 1]",
+    "NewAddressCB":"[Yes]",
+    "AppearanceType_CB":"[Primary, Non-Primary]",
+    "IsOnBehalfOfCB":"[Yes]",
+    "ProBono_CB":"[No, Yes]",
+    "Electronic Service":"[Yes]"
+}

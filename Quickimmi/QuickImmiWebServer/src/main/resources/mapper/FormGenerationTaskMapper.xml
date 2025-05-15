@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quick.immi.ai.dao.FormGenerationTaskMapper">
+
+    <insert id="create" parameterType="com.quick.immi.ai.entity.FormGenerationTask">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        insert into form_generation_task_table (`user_id`, `lawyer_id`, `case_id`, `document_id`, `type`, `form_name`, `metadata`, `status`, `created_at`) values(#{userId}, #{lawyerId}, #{caseId}, #{documentId}, #{type},
+                #{formName}, #{metadata}, #{status}, #{createdAt});
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        delete from form_generation_task_table where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="long" resultType="com.quick.immi.ai.entity.FormGenerationTask">
+        SELECT * FROM form_generation_task_table WHERE id = #{id}
+    </select>
+
+    <select id="listByIds" parameterType="list" resultType="com.quick.immi.ai.entity.FormGenerationTask">
+        SELECT * FROM form_generation_task_table WHERE id IN
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="listByCaseId" parameterType="long" resultType="com.quick.immi.ai.entity.FormGenerationTask">
+        SELECT * FROM form_generation_task_table WHERE case_id = #{caseId}
+    </select>
+
+    <update id="update" parameterType="com.quick.immi.ai.entity.FormGenerationTask">
+        update form_generation_task_table
+        <set>
+            <if test="caseId != null">
+                case_id = #{caseId},
+            </if>
+            <if test="documentId != null">
+                document_id = #{documentId},
+            </if>
+            <if test="formName != null">
+                form_name = #{formName},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="s3Location != null">
+                s3_location = #{s3Location},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt},
+            </if>
+        </set>
+        where id=#{id};
+    </update>
+</mapper>

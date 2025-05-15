@@ -1,0 +1,54 @@
+{
+    "partyInformation": {
+      "firstName": "JohnDoe",
+      "middleName": "Q",
+      "lastName": "Smith",
+      "address1": "123MainSt",
+      "address2": "Unit4",
+      "city": "Anytown",
+      "state": "Anystate",
+      "zip": "12345",
+      "alienNumber": "A012345678",
+      "entryOfAppearanceForDropdown": "Custody/Bond"
+    },
+    "representation": {
+      "representationTypeDropdown": "Attorney",
+      "courtName": "CourtNameXYZ",
+      "barNumber": "BN1234567",
+      "organization": "LegalOrgXYZ",
+      "country": "USA",
+      "attorneyAppearanceDropdown": "1"
+    },
+    "contactInformation": {
+      "repInfoFirstName": "JaneDoe",
+      "repInfoMiddleName": "R",
+      "repInfoLastName": "Doe",
+      "repInfoAddress1": "456SideSt",
+      "repInfoAddress2": "Suite8",
+      "lawFirm": "DoeLawFirm",
+      "repInfoCity": "Cityville",
+      "repInfoState": "Stateville",
+      "repInfoZip": "67890",
+      "repInfoPhone": "123-456-7890",
+      "repInfoFax": "098-765-4321",
+      "repInfoEmail": "jane.doe@example.com",
+      "newAddressCheckbox": "Yes"
+    },
+    "typeOfAppearance": {
+      "typeOfAppearanceDropdown": "Primary",
+      "isOnBehalfOfCheckbox": "Yes",
+      "isOnBehalfOfName": "OnBehalfOfNameXYZ",
+      "isOnBehalfDate": "2024-04-07",
+      "proBonoRepresentationDropdown": "Yes"
+    },
+    "proofOfService": {
+      "attorneyName": "AttorneyNameXYZ",
+      "deliveryDate": "2024-04-08",
+      "dhsAddress": "DHSAddress123",
+      "electronicServiceCheckbox": "Yes"
+    },
+    "additionalInformation": {
+      "additionalInformation": "AdditionalInfoXYZ"
+    }
+  }
+  

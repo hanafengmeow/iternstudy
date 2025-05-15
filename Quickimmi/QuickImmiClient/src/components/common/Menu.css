@@ -1,0 +1,90 @@
+.menu-container {
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.xsmall .menu-container,
+.small .menu-container {
+  width: auto;
+}
+
+.menu-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-container.popup {
+  background-color: var(--gray-color-4);
+  border-radius: 50px;
+}
+
+.menu-popup {
+  position: absolute;
+  background-color: var(--white-color);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  z-index: 999;
+  width: 225px;
+}
+
+.menu-popup.popup-position-bottom-left {
+  top: 42px;
+  right: -5px;
+}
+
+.menu-popup.popup-position-bottom-right {
+  top: 42px;
+  left: 0px;
+}
+
+.menu-popup.popup-position-right {
+  top: 0px;
+  left: 42px;
+}
+
+.menu-popup.popup-position-left {
+  top: 0px;
+  right: 42px;
+}
+
+.menu-option {
+  padding: 15px 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-option:hover {
+  background-color: var(--gray-color-4);
+}
+
+.menu-popup .menu-option + .menu-option {
+  border-top: 1px solid var(--gray-color-3);
+}
+
+.menu-option.option-align-right {
+  justify-content: flex-end;
+}
+
+.menu-option.option-align-left {
+  justify-content: flex-start;
+}
+
+.menu-option.option-align-center {
+  justify-content: center;
+}
+
+.menu-option.selected {
+  background-color: var(--gray-color-4);
+}
+
+.menu-option.header {
+  cursor: default;
+}
+
+.menu-option.header:hover {
+  background-color: var(--white-color);
+}

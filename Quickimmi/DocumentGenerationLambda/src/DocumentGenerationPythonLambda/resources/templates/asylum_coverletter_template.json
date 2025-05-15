@@ -1,0 +1,66 @@
+{
+  "template": {
+    "header": [
+      "/var/task/resources/logos/concordsage.png",
+      "T: +1-626 766 9272\nE: contact@concordsage.com\nwww.concordsage.com",
+      "Los Angeles\nSan Diego\nIrvine"
+    ],
+    "footer": [
+      "Concord & Sage P.C. Email: contact@concordsage.com",
+      "1360 Valley Vista Dr., Suite 140, Diamond Bar CA 91765"
+    ],
+    "body": {
+      "shipping_address": [
+        "{shipping_address}"
+      ],
+      "content": [
+        "Re: Representation for an Asylum & Applicant: {client[firstName]} {client[lastName]}",
+        "Applicant: {client[firstName]} {client[lastName]} (DOB: {client[dateOfBirth]})",
+        "{letter}"
+      ],
+      "documents": [
+        "Ex.1 Attorney Cover Letter\n\nEx.2 Form G-28\n\nEx.3 Form I-589\n\nEx.4 Copy of Evidence of Applicant's Case",
+        "If any further documents are needed to complete this application, please contact me at your earliest convenience.",
+        "Thank you for your attention to this matter."
+      ],
+      "signature": [
+        "Yours Sincerely,\n\n\n\n",
+        "Attorney at Law",
+        "{attorney[state]} Bar No. {attorney[attorneyBarNo]}",
+        "{letter_date}"
+      ]
+    }
+  },
+  "format": {
+    "footer": {
+      "font_name": "Helvetica",
+      "font_size": 9,
+      "x_position": 72,
+      "y_position": 50,
+      "line_height": 13.5,
+      "alignment": "left",
+      "show_page_number": false
+    },
+    "body": {
+      "default": {
+        "font_name": "Helvetica",
+        "font_size": 11,
+        "alignment": "left",
+        "line_height_factor": 1.15,
+        "margin_x": 72,
+        "margin_y": 108,
+        "page_size": "letter",
+        "section_break": 2
+      },
+      "shipping_address": {
+          "font_name": "Helvetica",
+          "font_size": 11,
+          "new_page": true,
+          "alignment": "left"
+      }
+    }
+  }
+}
+
+
+
