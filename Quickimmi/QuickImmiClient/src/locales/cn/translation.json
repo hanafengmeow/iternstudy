@@ -16,6 +16,7 @@
   "Return": "返回",
   "Search": "筛选",
   "Cancel": "取消",
+  "Edit": "编辑",
   "Generate Documents": "生成文件",
   "Regenerate Documents": "重新生成文档",
   "Automatically generate application documents based on provided information": "根据提供的信息自动生成申请文档",
@@ -216,7 +217,11 @@
     "LawFirmAddress": "律所地址",
     "AddressEditMessage": "请填入可以收到邮件的永久地址.",
     "AccountNumbersEditMessage": "填写您最新的USCIS线上账号与EOIR号码",
-    "EligibilityEditMessage": "请填正确填写并合适您的执照信息"
+    "EligibilityEditMessage": "请填正确填写并合适您的执照信息",
+    "EmailChangeTooltip": "请联系管理员修改您的邮箱地址",
+    "EmailAddress": "电子邮件地址",
+    "NotProvided": "未提供",
+    "MainNumber": "主要号码"
   },
 
   "FindIncomplete": "找出未完成字段",

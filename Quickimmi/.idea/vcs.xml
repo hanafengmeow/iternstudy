@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/DataPipeline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DocumentGenerationLambda" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/I94Crawler" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuickImmiCDK" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuickImmiClient" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuickImmiLLM" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuickImmiWebServer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QuickimmiModel" vcs="Git" />
+  </component>
+</project>

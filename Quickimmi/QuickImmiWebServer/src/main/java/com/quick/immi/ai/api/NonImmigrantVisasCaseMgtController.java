@@ -19,11 +19,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/case/non-immigrant-visas")
+@RestController // rest controller is a controller that handles RESTful web services,
+//RESTful web services are used to create web services that are used to create, read, update and delete (CRUD) operations.
+@RequestMapping("/api/case/non-immigrant-visas") 
 @Slf4j
-public class NonImmigrantVisasCaseMgtController {
 
+public class NonImmigrantVisasCaseMgtController {
+  //Autowired is used to inject the nonImmigrantVisasCaseMgtService bean into the controller
+  //which means the NonImmigrantVisasCaseMgtService bean is automatically created and injected into the controller
   @Autowired private NonImmigrantVisasCaseMgtService nonImmigrantVisasCaseMgtService;
 
   @Login

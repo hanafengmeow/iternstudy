@@ -16,6 +16,7 @@
   "Return": "Return",
   "Search": "Search",
   "Cancel": "Cancel",
+  "Edit": "Edit",
   "Generate Documents": "Generate Documents",
   "Regenerate Documents": "Regenerate Documents",
   "Generate Merged Documents": "Generate Merged Documents",
@@ -210,7 +211,11 @@
     "LawFirmAddress": "Law Firm Address",
     "AddressEditMessage": "Use a permanent address where you can receive mail.",
     "AccountNumbersEditMessage": "Enter your latest USCIS Online Account Number and EOIR Number",
-    "EligibilityEditMessage": "Please provide and verify your eligibility information"
+    "EligibilityEditMessage": "Please provide and verify your eligibility information",
+    "EmailChangeTooltip": "Please contact the admin to change your email address",
+    "EmailAddress": "Email Address",
+    "NotProvided": "Not Provided",
+    "MainNumber": "Main Number"
   },
 
   "FindIncomplete": "Find Incomplete",
